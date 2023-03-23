@@ -1,0 +1,81 @@
+body{
+    font-family: 'Gentium Plus', serif;
+    background-color: #fff8f9;
+}
+
+.HomeCarddiv{
+    text-align: center;
+}
+/* .column {
+    float: left;
+    width: 12%;
+    padding: 5px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+
+    border: 1px solid black;
+    margin-right: 20px;
+  }
+  
+  /* Clear floats after image containers */
+  /*  
+  .row{
+    width: 100%;
+    content: "";
+    clear: both;
+    display: table;
+    margin-left: 100px;
+  } */
+
+  /* .dyk_img{
+    width: 300px;
+    height: 200px;
+  } */
+  .dyk_img,.benefits_img{
+    display: block;
+    /* width: 95%; */
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: solid 2px red;
+    /* border-radius: 4px; */
+  }
+
+  .row {
+    display: flex; /* equal height of the children */
+    margin-top: 50px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 90px;
+  }
+
+  
+  .column {
+    flex: 1; /* additionally, equal width */
+    
+    padding: 2em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    /* border: solid; */
+    border-radius: 10px;
+    /* text-align: center; */
+    background-color: #ff3e5b;
+    /* box-shadow: rgba(13, 13, 13, 0.35) 3px 7px 15px; */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+    /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px; */
+    /* box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px; */
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+
+  h1,h2{
+    text-align: center;
+    font-family: 'Proza Libre', sans-serif;
+    /* font-family: 'Gentium Plus', serif; */
+  }
+
+  .HomeInfodiv{
+    text-align: center;
+  }
