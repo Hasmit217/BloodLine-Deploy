@@ -1,7 +1,7 @@
 import React from "react";
 import HomeCard from "./HomeCard";
 import HomeInfo from "./HomeInfo";
-
+import Footer from "./Footer";
 
 function App(){
     return(
@@ -16,6 +16,7 @@ function App(){
             </div>
 
             <HomeInfo></HomeInfo>
+            <Footer></Footer>
         </div>
     )
 }
