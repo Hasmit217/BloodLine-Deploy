@@ -115,3 +115,74 @@ footer * {
   justify-content: space-around;
   text-align: center;
 }
+
+/* Navbar Css*********************************** */
+a{
+  text-decoration:white;
+  text-decoration-color:none;
+}
+a:hover{
+  text-shadow: #ffffff;
+}
+
+li,ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  display:flex;
+  background-color: #fceded;
+  border:none;
+  margin:0px;
+  padding:10px;
+  /* position : fixed;
+  width:100%;
+  top:0 */
+}
+.logo-img{
+  margin-right: 35px;
+  border-radius:30%;
+  max-width:80px;
+}
+.navbar-func-container{
+  margin : 0px;
+  display: flex;
+  flex-wrap: wrap;
+  position : relative;
+  top : 25px;
+}
+.navbar-func{
+  /* border:1px solid; */
+  margin:10px;
+  padding: 10px;
+  
+  /* text-align: justify; */
+}
+.navbar-func a{
+  display:block;
+  height:100%;
+  width : 100%
+}
+.navbar-func a:hover{
+  background-color: #f7cbcb;
+  max-width:100%;
+}
+.dropdown-content{
+  display:none;
+  position:absolute;
+  border-radius: 5px;
+  background-color: #fceded;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index : 1;
+}
+.dropdown-content a{
+  color:black;
+  padding:20px 20px;
+  display:block;
+}
+.navbar-func:hover .dropdown-content{display:block;}
+
+/* ************************************************************************************ */

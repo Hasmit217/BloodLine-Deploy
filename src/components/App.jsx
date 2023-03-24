@@ -2,11 +2,12 @@ import React from "react";
 import HomeCard from "./HomeCard";
 import HomeInfo from "./HomeInfo";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 function App(){
     return(
         <div>
-            
+            <Navbar></Navbar>
             <div className="row">
                 <div className="column card1"><HomeCard pageURL = "#" name = "Donor Login/Registration"  className="HomeCard"></HomeCard></div>
                 <div className="column card2"><HomeCard pageURL = "#" name = "Blood Camp Registration" className="HomeCard"></HomeCard></div>
