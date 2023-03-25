@@ -47,6 +47,7 @@ body {
 .row {
   display: flex;
   /* equal height of the children */
+  flex-wrap: wrap;
   margin-top: 50px;
   margin-left: 120px;
   margin-right: 120px;
