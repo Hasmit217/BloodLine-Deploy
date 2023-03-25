@@ -48,7 +48,7 @@ body {
   display: flex;
   /* equal height of the children */
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 150px;
   margin-left: 120px;
   margin-right: 120px;
   margin-bottom: 90px;
@@ -138,9 +138,9 @@ li,ul {
   border:none;
   margin:0px;
   padding:10px;
-  /* position : fixed;
+  position : fixed;
   width:100%;
-  top:0 */
+  top:0
 }
 .logo-img{
   margin-right: 35px;
