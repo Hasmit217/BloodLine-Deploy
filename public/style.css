@@ -94,6 +94,7 @@ ul{
 }
 
 footer {
+  /* position: fixed; */
   background-color: rgb(36, 35, 35);
   color: white;
   bottom: 0;
