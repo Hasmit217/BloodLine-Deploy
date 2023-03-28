@@ -1,15 +1,18 @@
 import React from "react";
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
-import Home from "./dashboard/Home"
+import Home from "./dashboard/Home";
+import CampSchedule from "./bloodCamp/CampSchedule";
 
-function App(){
-    return(
+function App() {
+    return (
         <div>
             <Navbar></Navbar>
-            
-            <Home></Home>
-            
+            <CampSchedule></CampSchedule>
+
+            {/* <Home></Home> */}
+
+
             <Footer></Footer>
         </div>
     )
