@@ -7,32 +7,7 @@ body {
   text-align: center;
 }
 
-/* .column {
-    float: left;
-    width: 12%;
-    padding: 5px;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    text-align: center;
 
-    border: 1px solid black;
-    margin-right: 20px;
-  }
-  
-  /* Clear floats after image containers */
-/*  
-  .row{
-    width: 100%;
-    content: "";
-    clear: both;
-    display: table;
-    margin-left: 100px;
-  } */
-
-/* .dyk_img{
-    width: 300px;
-    height: 200px;
-  } */
 .dyk_img,
 .benefits_img {
   display: block;
@@ -44,11 +19,41 @@ body {
   /* border-radius: 4px; */
 }
 
+.DonorDashboard{
+  margin-top: 150px;
+}
+
+.DonorDashboardUl{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 210px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.DonorDashboardLi{
+  display: block;
+  border: 1px solid;
+  border-color: #bbbbbb;
+  border-radius: 5px;
+  height: 40px;
+  padding-top: 20px;
+  margin-bottom: 16px;
+  background-color: #eeeded;
+}
+
+.DonorDashboardLi a{
+  color: rgb(69, 69, 69);
+}
+
 .row {
   display: flex;
   /* equal height of the children */
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 150px;
   margin-left: 120px;
   margin-right: 120px;
   margin-bottom: 90px;
@@ -138,9 +143,9 @@ li,ul {
   border:none;
   margin:0px;
   padding:10px;
-  /* position : fixed;
+  position : fixed;
   width:100%;
-  top:0 */
+  top:0
 }
 .logo-img{
   margin-right: 35px;
