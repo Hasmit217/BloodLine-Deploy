@@ -6,7 +6,7 @@ function DonorDashboard(){
         <div className="DonorDashboard">
             <div className="topdiv">
                 <div className="DonorHeadDiv"><h1>Welcome XYZ</h1></div>
-                <div className = "DonorProfileImgDiv"><img className = "DonorProfileImg" src = "images/profile_image.jpg"></img></div>
+                <div className = "DonorProfileImgDiv"><img className = "DonorProfileImg" src = "images/profile_image.jpeg"></img></div>
             </div>  
             <div className="DonorMainDiv">
                 <ul className="DonorDashboardUl">
@@ -18,7 +18,7 @@ function DonorDashboard(){
                 <DonorHome></DonorHome>
 
             </div>  
-             
+
         </div>
     )
 }

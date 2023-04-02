@@ -1,6 +1,5 @@
 import React from "react";
-// import {Outlet, Link} from "react-router-dom";
-// import Home from "../dashboard/Home"; 
+import { Link } from "react-router-dom";
 
 
 function navbar() {
@@ -14,47 +13,46 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Dashboard</a>
                         <div className="dropdown-content">
                             <li>
-                                <a href="#">Home</a>
-                                {/* <Link to = "Home">Home</Link> */}
-                                <a href="#">About Blood Donation</a>
-                                <a href="#">Contact Us</a>
-                                <a href="#">Notification/News</a>
+                                <Link to="/">Home</Link>
+                                <Link to="/about">About Blood Donation</Link>
+                                <Link to="/camp">Contact Us</Link>
+                                <Link to="/">Notification/News</Link>
                             </li>
                         </div>
                     </div>
                     <div className="navbar-func"> <a href="#">Donate Blood</a>
                         <div className="dropdown-content">
                             <li>
-                                <a href="#">Donor login</a>
-                                <a href="#">Search Blood donation camps</a>
-                                <a href="#">Register as Volunteer</a>
-                                <a href="#">About Blood donation</a>
+                                <Link to="">Donor login</Link>
+                                <Link to="/campSchudule">Search Blood donation camps</Link>
+                                <Link to="">Register as Volunteer</Link>
+                                <Link to="">About Blood donation</Link>
                             </li>
                         </div>
                     </div>
                     <div className="navbar-func"> <a href="#">Find Blood</a>
                         <div className="dropdown-content">
                             <li>
-                                <a href="#">Blood availiblity</a>
-                                <a href="#">Blood bank Directory</a>
-                                <a href="#">Contact volunteer donors</a>
-                                <a href="#">Make Blood Request</a>
+                                <Link to="">Blood availiblity</Link>
+                                <Link to="">Blood bank Directory</Link>
+                                <Link to="">Contact volunteer donors</Link>
+                                <Link to="/requestBloodForm">Make Blood Request</Link>
                             </li>
                         </div>
                     </div>
                     <div className="navbar-func"> <a href="#">Blood Bank Login</a>
                         <div className="dropdown-content">
                             <li>
-                                <a href="#">Login</a>
-                                <a href="#">Register Blood bank</a>
+                                <Link to="">Login</Link>
+                                <Link to="">Register Blood bank</Link>
                             </li>
                         </div>
                     </div>
                     <div className="navbar-func"> <a href="#">Host blood camp</a>
                         <div className="dropdown-content">
                             <li>
-                                <a href="#">Register Blood Camp</a>
-                                <a href="#">Learn About Hosting Blood camp</a>
+                                <Link to="">Register Blood Camp</Link>
+                                <Link to="">Learn About Hosting Blood camp</Link>
                             </li>
                         </div>
                     </div>
