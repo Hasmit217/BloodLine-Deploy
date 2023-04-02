@@ -10,7 +10,7 @@ function App() {
     return (
         <div>
             <Navbar></Navbar>
-            {/* <DonorDashboard></DonorDashboard> */}
+            <DonorDashboard></DonorDashboard>
             {/* <Home></Home> */}
             {/* <CampSchedule></CampSchedule> */}
             <Footer></Footer>
