@@ -10,7 +10,7 @@ function Home() {
             <div className="column card3"><HomeCard pageURL="#" name="Blood Availability Search" className="HomeCard"></HomeCard></div>
             <div className="column card4"><HomeCard pageURL="#" name="Blood Bank Directory" className="HomeCard"></HomeCard></div>
             <div className="column card5"><HomeCard pageURL="#" name="Blood Donation Camps" className="HomeCard"></HomeCard></div>
-            <HomeInfo></HomeInfo> 
+            <HomeInfo></HomeInfo>
         </div>
     )
 }

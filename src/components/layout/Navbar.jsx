@@ -1,4 +1,6 @@
 import React from "react";
+// import {Outlet, Link} from "react-router-dom";
+// import Home from "../dashboard/Home"; 
 
 
 function navbar() {
@@ -13,6 +15,7 @@ function navbar() {
                         <div className="dropdown-content">
                             <li>
                                 <a href="#">Home</a>
+                                {/* <Link to = "Home">Home</Link> */}
                                 <a href="#">About Blood Donation</a>
                                 <a href="#">Contact Us</a>
                                 <a href="#">Notification/News</a>

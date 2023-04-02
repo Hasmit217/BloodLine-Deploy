@@ -1,17 +1,18 @@
 import React from "react";
-import HomeCard from "./HomeCard";
-import HomeInfo from "./HomeInfo";
-import DonorDashboard from "./DonorDashboard";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import Home from "./Home";
+import DonorDashboard from "./donor/DonorDashboard";
+import Footer from "./layout/Footer";
+import Navbar from "./layout/Navbar";
+import Home from "./dashboard/Home";
+import DonorHome from "./donor/DonorHome";
+import CampSchedule from "./bloodCamp/CampSchedule";
 
-function App(){
-    return(
+function App() {
+    return (
         <div>
             <Navbar></Navbar>
+            {/* <DonorDashboard></DonorDashboard> */}
             {/* <Home></Home> */}
-            <DonorDashboard></DonorDashboard>
+            {/* <CampSchedule></CampSchedule> */}
             <Footer></Footer>
         </div>
     )
@@ -19,7 +20,4 @@ function App(){
 
 export default App;
 
-//2 20  20
-//2 50  49
-//3 15  72
 

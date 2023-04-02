@@ -19,36 +19,6 @@ body {
   /* border-radius: 4px; */
 }
 
-.DonorDashboard{
-  margin-top: 150px;
-}
-
-.DonorDashboardUl{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 210px;
-  text-align: center;
-  margin-bottom: 80px;
-  margin-left: 20px;
-  margin-top: 50px;
-}
-
-.DonorDashboardLi{
-  display: block;
-  border: 1px solid;
-  border-color: #bbbbbb;
-  border-radius: 5px;
-  height: 40px;
-  padding-top: 20px;
-  margin-bottom: 16px;
-  background-color: #eeeded;
-}
-
-.DonorDashboardLi a{
-  color: rgb(69, 69, 69);
-}
-
 .row {
   display: flex;
   /* equal height of the children */
@@ -99,7 +69,7 @@ ul{
 }
 
 footer {
-  background-color: black;
+  background-color: rgb(36, 35, 35);
   color: white;
   bottom: 0;
   width: 100vw;
@@ -144,7 +114,7 @@ li,ul {
   margin:0px;
   padding:10px;
   position : fixed;
-  width:100%;
+  width: 100%;
   top:0
 }
 .logo-img{
@@ -192,3 +162,206 @@ li,ul {
 .navbar-func:hover .dropdown-content{display:block;}
 
 /* ************************************************************************************ */
+/* CampSchecdule css******************************************************************* */
+
+.camp-container{
+  box-sizing: border-box;
+  /* width: 100%; */
+  /* height: 20px; */
+  /* margin-bottom: 50px; */
+}
+.below-nav-img{
+  height:300px;
+  width:100vw;
+  background-position: center;
+  /* background-size: cover; */
+}
+.camp-drop-menu{
+  position: absolute;
+  transform : translateY(4px);
+  width: 20%;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 150px;
+  background-color: #eae8e8;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) ;
+  /* animation: slideDown 300ms ease-in-out ; */
+}
+/* @keyframes slideDown {
+  0% { 
+    opacity: 0;
+    transform: translateY(-60px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+} */
+.camp-drop-item{
+  padding:5px;
+  border-bottom: 1px solid rgb(227, 222, 222);
+  cursor:pointer;
+}
+.camp-drop-item:hover{
+  background-color:rgb(255, 255, 255);
+}
+.search-container{
+  box-sizing: border-box;
+  border-radius: 5px;
+  border:2px solid bisque;
+  padding: 25px;
+  margin: auto;
+  margin-bottom: 100px;
+  width: 75%;
+  /* background-color: #fceded; */
+}
+.camp-drop-input{
+  border:2px solid rgb(233, 230, 230);
+  border-radius: 4px;
+  height: 25px;
+  background-color: #e6e6e6;
+  width: 80%;
+}
+/* label{
+  border: 2px solid black;
+} */
+.camp-search-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+.camp-subFields{
+  /* margin: 5px; */
+  width:25%
+}
+.camp-subFields input{
+  background-color: #fff8f9;
+  width: 100%;
+  /* border: 3px solid black; */
+}
+.camp-drop-select-value{
+  /* height: 150px; */
+  max-height: 100px;
+}
+/* .search-container button{
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.camp-submit{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.camp-submit button{
+  border: 2px solid rgb(237, 40, 40);
+  background: rgb(255, 0, 0) ;
+  border-radius: 5px;
+  width: 20%;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ****************************************************************************************/
+
+/* ===================== Donor Dashboard ================================ */
+
+.DonorDashboard{
+  margin-top: 150px;
+}
+
+.DonorDashboardUl{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 210px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-left: 20px;
+  margin-top: 50px;
+  padding-right: 15px;
+  border-right: 2px dashed #bbbbbb;
+  /* height: 400px; */
+}
+
+.DonorDashboardLi{
+  display: fixed;
+  display: block;
+  border: 1px solid;
+  border-color: #bbbbbb;
+  border-radius: 5px;
+  height: 40px;
+  padding-top: 20px;
+  margin-bottom: 16px;
+  background-color: #eeeded;
+  width: 200px;
+}
+
+.DonorDashboardLi a{
+  color: rgb(69, 69, 69);
+}
+
+.DonorProfileImg{
+  /* margin-top: 150px; */
+  height: 120px;
+  width: 120px;
+  margin-left: 110px;
+  /* margin-bottom: 50px; */
+  border-radius: 80px;
+}
+
+.topdiv{
+  display: flex;
+  /* margin-top: 10px; */
+  height: 170px;
+  /* margin: auto; */
+  margin-top: -44px;
+  width: 100%;
+  flex-wrap:wrap;
+  background-color: #eeeded;
+}
+
+.DonorHeadDiv{
+  margin-left: 540px;
+  margin-top: 40px;
+  /* text-align: center; */
+}
+
+.DonorProfileImgDiv{
+  margin-top: 25px;
+  margin-left: 230px;
+}
+
+.DonorHomeDiv{
+  margin-left: 190px;
+  /* margin-bottom: -50px; */
+  margin-top: 30px;
+}
+
+.DonorHomeh2{
+  text-align: left;
+  margin-bottom: 30px;
+  /* text-shadow: 2px 2px #f7c4c4; */
+  color: #ff3e5b;
+  border: 1px solid #f2bebe;
+  border-radius: 4px ;
+  height: 60px;
+  width: 620px;
+  padding-top: 23px;
+  padding-left: 15px;
+  background-color: rgb(255, 224, 224);
+}
+
+.DonorMainDiv{
+  display: flex;
+}
