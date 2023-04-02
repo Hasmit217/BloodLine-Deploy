@@ -1,8 +1,20 @@
-import React from "react";
-import DropDown from "./DropDown";
+import React, { useState } from "react";
 import options from "./option"
 
-function campSchedule() {
+function CampSchedule() {
+
+    const [state, setState] = useState("");
+    const [districts, setDistrict] = useState("");
+
+    const handleState = (e) => {
+        const value = e.target.value;
+        setState(value);
+    }
+    const handleDistrict = (e) => {
+        const value = e.target.value;
+        setDistrict(value);
+    }
+
     return (
         <div className="camp-container">
             <img className="below-nav-img" src="images/belownavimg.webp"></img>
@@ -10,21 +22,41 @@ function campSchedule() {
                 <h1>Camp Schedule</h1>
                 <form action="" className="camp-search-form">
                     <div className="camp-subFields">
-                        <label htmlFor="state">State</label>
-                        <DropDown placeholder="Select" options={options}></DropDown>
+                        <label htmlFor="state">State<span class="required-field"></span></label>
+                        {/* <br></br> */}
+                        <select name="State" onChange={handleState} required>
+                            <option value="" selected disabled>Select State</option>
+                            {options.map((item) => {
+                                return <option value={item.label}>{item.label}</option>
+                                {/* console.log(item.label); */ }
+                            })}
+                        </select>
+
                     </div>
-                    <div className="camp-subFields">
-                        <label htmlFor="state">District</label>
-                        <DropDown placeholder="Select" options={options}></DropDown>
+                    <div>
+                        <label htmlFor="district">District<span class="required-field"></span></label>
+                        {/* <br></br> */}
+                        <select name="District" onChange={handleDistrict} required>
+                            <option value="" selected disabled>Select District</option>
+                            {options.map((item) => {
+                                if (item.label === state) {
+                                    return item.district.map((itemDis) => {
+                                        return <option value={itemDis}>{itemDis}</option>
+                                        {/* console.log(itemDis); */ }
+                                    })
+                                }
+                            })}
+                        </select>
                     </div>
+                    
                     <div className="camp-subFields">
                         <label htmlFor="state">City</label>
-                        <DropDown placeholder="Select" options={options}></DropDown>
+                        <input type="text" placeholder="Optional"></input>
                     </div>
                     <div className="camp-subFields">
-                        <label htmlFor="state">Camp Date</label>
+                        <label htmlFor="state">Camp Date<span class="required-field"></span></label>
                         <div className="camp-subFields-date">
-                            <input type="date" placeholder="select date"></input>
+                            <input type="date" placeholder="select date" required></input>
                         </div>
                     </div>
                 </form>
@@ -34,7 +66,8 @@ function campSchedule() {
 
             </div>
         </div>
+
     )
 }
 
-export default campSchedule;
+export default CampSchedule;

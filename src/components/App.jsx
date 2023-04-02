@@ -3,17 +3,30 @@ import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
 import Home from "./dashboard/Home";
 import CampSchedule from "./bloodCamp/CampSchedule";
+import RequestBloodForm from "./patient/RequestForm";
+
+import {
+    BrowserRouter as Router,
+    RouterProvider,
+    Route,
+    Routes,
+    Link,
+} from "react-router-dom";
+
 
 function App() {
     return (
         <div>
-            <Navbar></Navbar>
-            <CampSchedule></CampSchedule>
+            <Router>
+                <Navbar></Navbar>
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route path="/campSchudule" element={<CampSchedule />} />
+                    <Route path="/requestBloodForm" element={<RequestBloodForm />} />
+                </Routes>
 
-            {/* <Home></Home> */}
-
-
-            <Footer></Footer>
+                <Footer></Footer>
+            </Router>
         </div>
     )
 }
