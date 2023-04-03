@@ -2,6 +2,16 @@ const bloodgroup=[
     "A+","A-","AB+","AB-","B+","B-","O+","O-"
 ]
 
+const sliderItems=[
+    {
+        id:1,
+        img:"https://images.pexels.com/photos/12227661/pexels-photo-12227661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        id:2,
+        img:"https://images.pexels.com/photos/12820060/pexels-photo-12820060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    }
+]
 const options = [
     {    
         "label" : "Andhra Pradesh",
@@ -903,4 +913,4 @@ const options = [
 ]
 
 export default options;
-export {bloodgroup};
+export {bloodgroup,sliderItems};

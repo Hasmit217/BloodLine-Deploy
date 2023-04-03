@@ -14,7 +14,7 @@ function navbar() {
                         <div className="dropdown-content">
                             <li>
                                 <Link to="/">Home</Link>
-                                <Link to="/about">About Blood Donation</Link>
+                                <Link to="/AboutUs">About</Link>
                                 <Link to="/camp">Contact Us</Link>
                                 <Link to="/">Notification/News</Link>
                             </li>
@@ -23,7 +23,7 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Donate Blood</a>
                         <div className="dropdown-content">
                             <li>
-                                <Link to="">Donor login</Link>
+                                <Link to="/DonorDash">Donor login</Link>
                                 <Link to="/campSchudule">Search Blood donation camps</Link>
                                 <Link to="">Register as Volunteer</Link>
                                 <Link to="">About Blood donation</Link>
@@ -33,8 +33,8 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Find Blood</a>
                         <div className="dropdown-content">
                             <li>
-                                <Link to="">Blood availiblity</Link>
-                                <Link to="">Blood bank Directory</Link>
+                                <Link to="/bloodAvailSearch">Blood availiblity</Link>
+                                <Link to="/BloodBankDir">Blood bank Directory</Link>
                                 <Link to="">Contact volunteer donors</Link>
                                 <Link to="/requestBloodForm">Make Blood Request</Link>
                             </li>

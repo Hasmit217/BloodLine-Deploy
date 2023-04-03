@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import options from "./option"
+import React,{useState} from "react";
+import options from "../bloodCamp/option";
 
-function CampSchedule() {
 
+function BloodBankDir(){
     const [state, setState] = useState("");
     const [districts, setDistrict] = useState("");
+    const [blood,setBlood] = useState("");
 
     const handleState = (e) => {
         const value = e.target.value;
@@ -14,12 +15,16 @@ function CampSchedule() {
         const value = e.target.value;
         setDistrict(value);
     }
+    const handleBlood = (e) => {
+        const value = e.target.value;
+        setBlood(value);
+    }
 
     return (
         <div className="camp-container">
             <img className="below-nav-img" src="images/belownavimg.webp"></img>
             <div className="search-container">
-                <h1 style={{color :"#b11717"}}>Camp Schedule</h1>
+                <h1 style={{color :"#b11717"}}>Search Nearest Blood Bank</h1>
                 <form action="" className="camp-search-form">
                     <div className="camp-subFields">
                         <label htmlFor="state">State<span class="required-field"></span></label>
@@ -34,9 +39,9 @@ function CampSchedule() {
 
                     </div>
                     <div>
-                        <label htmlFor="district">District<span class="required-field"></span></label>
+                        <label htmlFor="district">District</label>
                         {/* <br></br> */}
-                        <select name="District" onChange={handleDistrict} required>
+                        <select name="District" onChange={handleDistrict}>
                             <option value="" selected disabled>Select District</option>
                             {options.map((item) => {
                                 if (item.label === state) {
@@ -48,16 +53,10 @@ function CampSchedule() {
                             })}
                         </select>
                     </div>
-                    
+
                     <div className="camp-subFields">
                         <label htmlFor="state">City</label>
                         <input type="text" placeholder="Optional"></input>
-                    </div>
-                    <div className="camp-subFields">
-                        <label htmlFor="state">Camp Date<span class="required-field"></span></label>
-                        <div className="camp-subFields-date">
-                            <input type="date" placeholder="select date" required></input>
-                        </div>
                     </div>
                 </form>
                 <div className="camp-submit">
@@ -66,8 +65,7 @@ function CampSchedule() {
 
             </div>
         </div>
-
     )
 }
 
-export default CampSchedule;
+export default BloodBankDir;
