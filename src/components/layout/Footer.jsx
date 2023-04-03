@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function footer() {
     return (
@@ -8,34 +9,34 @@ function footer() {
                     <div className="footer-col">
                         <h3>Looking For Blood</h3>
                         <ul>
-                            <li><a href="#">Search Blood Availiblity</a></li>
-                            <li><a href="#search">Find Donor</a></li>
-                            <li><a href="#search">Blood bank Directory</a></li>
+                            <li><Link to="/bloodAvailSearch">Search Blood Availiblity</Link></li>
+                            <li><Link to="">Find Donor</Link></li>
+                            <li><Link to="/BloodBankDir">Blood bank Directory</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h3>Want to Donate Blood</h3>
                         <ul>
-                            <li><a href="#">Register as Volunteer</a></li>
-                            <li><a href="#About">search Blood camps</a></li>
-                            <li><a href="#Contact">Donor Login</a></li>
-                            <li><a href="#support">About Blood Donation</a></li>
+                            <li><Link to="">Register as Volunteer</Link></li>
+                            <li><Link to="/campSchudule">Search Blood camps</Link></li>
+                            <li><Link to="">Donor Login</Link></li>
+                            <li><Link to="">About Blood Donation</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h3>Blood Bank Login</h3>
                         <ul>
-                            <li><a href="#">Add your Blood Bank</a></li>
-                            <li><a href="#About">Blood Bank login</a></li>
+                            <li><Link to="">Add your Blood Bank</Link></li>
+                            <li><Link to="">Blood Bank login</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h3>About us</h3>
                         <ul>
-                            <li><a href="#">About BloodLine</a></li>
-                            <li><a href="#About">Contact Us</a></li>
-                            <li><a href="#Contact">Gallery</a></li>
-                            <li><a href="#support">About Blood donation</a></li>
+                            <li><Link to="/AboutUs">About BloodLine</Link></li>
+                            <li><Link to="">Contact Us</Link></li>
+                            <li><Link to="">Gallery</Link></li>
+                            <li><Link to="">About Blood donation</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +44,7 @@ function footer() {
                     <p>© 2023 by Ministry of Health and Family Welfare.</p>
                 </div>
                 <div className="footer-row">
-                <p><a href="terms">Terms & Condition</a>|<a href="terms">Privacy Policy</a>| Last Updates:24 March 2023 </p>
+                <p><Link to="">Terms & Condition</Link>|<Link to="">Privacy Policy</Link>| Last Updates:24 March 2023 </p>
                 </div>
             </footer>
         </div>

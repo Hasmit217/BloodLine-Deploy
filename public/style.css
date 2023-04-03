@@ -7,10 +7,6 @@ body {
   text-align: center;
 }
 
-a{
-  text-decoration: none;
-  color: rgb(110, 106, 106);
-}
 
 /* .column {
     float: left;
@@ -71,7 +67,7 @@ a{
   /* border: solid; */
   border-radius: 10px;
   /* text-align: center; */
-  background-color: #ff3e5b;
+  background-color: #f40428;
   /* box-shadow: rgba(13, 13, 13, 0.35) 3px 7px 15px; */
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
   /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px; */
@@ -106,7 +102,12 @@ footer {
   width: 100vw;
   font-size: 16px;
 }
-
+footer a{
+  color: #8b8989;
+}
+footer a:hover{
+  color: #ede7e7;
+}
 footer * {
   box-sizing: border-box;
   border: none;
@@ -125,11 +126,15 @@ footer * {
 
 /* Navbar Css*********************************** */
 a{
-  text-decoration:white;
-  text-decoration-color:none;
+  color:rgb(49, 48, 48);
+  text-decoration:none;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out 0.2s;
 }
 a:hover{
-  text-shadow: #ffffff;
+  color: #020202;
+  transform: translateY(0.5px);
+  transition: all 0.1s ease-in-out 0.1s;
 }
 
 li,ul {
@@ -146,7 +151,8 @@ li,ul {
   padding:10px;
   position : fixed;
   width:100%;
-  top:0
+  top:0;
+  z-index: 2;
 }
 .logo-img{
   margin-right: 35px;
@@ -173,8 +179,9 @@ li,ul {
   width : 100%
 }
 .navbar-func a:hover{
-  background-color: #f7cbcb;
-  max-width:100%;
+  /* background-color: #b9b5b5; */
+  /* max-width:100%; */
+  font-size: 20px;
 }
 .dropdown-content{
   display:none;
@@ -294,7 +301,6 @@ li,ul {
   margin-top: 50px;
 }
 .camp-submit button{
-  border: 2px solid rgb(237, 40, 40);
   background: rgb(255, 0, 0) ;
   border-radius: 5px;
   width: 20%;
@@ -313,9 +319,6 @@ li,ul {
 }
 .br-heading h1{
   color: #b11717;
- 
-
-  
 }
 /* .br-container h1{
   border-bottom: #c50724;
@@ -388,10 +391,11 @@ button{
   width:20%;
   height: 40px;
   border-radius: 10px;
-  border:3px solid rgb(235, 235, 235);
+  border:3px solid rgb(255, 255, 255);
   background-color: rgb(230 29 29);
   font-size: 18px;
   color: #eae8e8;
+  transition: 0.5s;
 }
 button:hover{
   color: white;
@@ -500,3 +504,17 @@ option{
 
 /* ====================================================== */
 
+/* Slider CSS**************************************** */
+
+.slider{
+  margin: auto;
+  margin-top: 110px;
+  display: flex;
+}
+
+/* About Us CSS**************************************** */
+
+.about-container{
+  margin:auto;
+  margin-top: 120px;
+}
