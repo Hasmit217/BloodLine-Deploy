@@ -11,6 +11,6 @@ function HomeInfo(){
             <img className="benefits_img" src="images/benefits.png"></img>
         </div>
     )
-}
+} 
 
 export default HomeInfo;

@@ -1,5 +1,7 @@
 import React from "react";
 import DonorHome from "./DonorHome";
+import Profile from "./Profile";
+import {Link} from "react-router-dom";
 
 function DonorDashboard(){
     return (
@@ -10,13 +12,12 @@ function DonorDashboard(){
             </div>  
             <div className="DonorMainDiv">
                 <ul className="DonorDashboardUl">
-                <li className="DonorDashboardLi"><a href="#">Home</a></li>
-                <li className="DonorDashboardLi"><a href = "#">View/Update Profile</a></li>
-                <li className="DonorDashboardLi"><a href = "#">Blood Requests</a></li>
-                <li className="DonorDashboardLi"><a href = "#">Logout</a></li>
+                <li className="DonorDashboardLi"><Link to="/DonorHome">Home</Link></li>
+                <li className="DonorDashboardLi"><Link to = "/Profile">View/Update Profile</Link></li>
+                <li className="DonorDashboardLi"><Link to = "/BloodRequests">Blood Requests</Link></li>
+                <li className="DonorDashboardLi"><Link to = "/Logout">Logout</Link></li>
                 </ul>
-                <DonorHome></DonorHome>
-
+                <DonorHome></DonorHome> 
             </div>  
 
         </div>

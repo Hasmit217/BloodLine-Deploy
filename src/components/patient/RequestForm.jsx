@@ -4,7 +4,7 @@ import options,{bloodgroup} from "../bloodCamp/option";
 function RequestBlood() {
 
     const [state, setState] = useState("");
-    const [districts, setDistrict] = useState("");
+    const [districts, setDistrict] = useState(""); 
     const [blood,setBlood] = useState("");
 
     const handleState = (e) => {

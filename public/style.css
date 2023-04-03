@@ -493,3 +493,10 @@ option{
 .DonorMainDiv{
   display: flex;
 }
+
+.ProfileDiv{
+  margin-top: 150px;
+}
+
+/* ====================================================== */
+

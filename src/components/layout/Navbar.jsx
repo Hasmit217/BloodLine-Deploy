@@ -23,8 +23,8 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Donate Blood</a>
                         <div className="dropdown-content">
                             <li>
-                                <Link to="">Donor login</Link>
-                                <Link to="/campSchudule">Search Blood donation camps</Link>
+                                <Link to="/DonorDashboard">Donor login</Link>
+                                <Link to="/campSchedule">Search Blood donation camps</Link>
                                 <Link to="">Register as Volunteer</Link>
                                 <Link to="">About Blood donation</Link>
                             </li>
