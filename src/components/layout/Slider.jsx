@@ -17,13 +17,18 @@ const Slider = ({ slides }) => {
             <button className="prev" onClick={handlePrevClick}>
                 &gt;
             </button>
-            <div className="slides">
+            <div class="slides">
+                <div class="numbertext">1 / 3</div>
+                <img src="https://images.pexels.com/photos/12227661/pexels-photo-12227661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                <div class="text">Caption Text</div>
+            </div>
+            {/* <div className="slides">
                 {sliderItems.map((slide, index) => (
                     <div key={slide.id} className={`slide ${index === activeSlideIndex ? 'active' : ''}`} >
                         <img src={slide.img} />
                     </div>
                 ))}
-            </div>
+            </div> */}
             <button className="next" onClick={handleNextClick}>
                 &gt;
             </button>

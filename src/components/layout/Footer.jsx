@@ -18,7 +18,7 @@ function footer() {
                         <h3>Want to Donate Blood</h3>
                         <ul>
                             <li><Link to="">Register as Volunteer</Link></li>
-                            <li><Link to="/campSchudule">Search Blood camps</Link></li>
+                            <li><Link to="/campSchedule">Search Blood camps</Link></li>
                             <li><Link to="">Donor Login</Link></li>
                             <li><Link to="">About Blood Donation</Link></li>
                         </ul>
