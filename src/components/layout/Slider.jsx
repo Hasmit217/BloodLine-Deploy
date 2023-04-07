@@ -1,7 +1,17 @@
 import { useState } from 'react';
 import sliderItems from "../bloodCamp/option";
 
-const Slider = ({ slides }) => {
+const Slider = () => {
+    // const sliderItems = [
+    //     {
+    //         id: 1,
+    //         img: "https://images.pexels.com/photos/12227661/pexels-photo-12227661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //     },
+    //     {
+    //         id: 2,
+    //         img: "https://images.pexels.com/photos/12820060/pexels-photo-12820060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //     }
+    // ]
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     const handlePrevClick = () => {
@@ -14,24 +24,25 @@ const Slider = ({ slides }) => {
 
     return (
         <div className="slider">
-            <button className="prev" onClick={handlePrevClick}>
+            {/* <button className="prev" onClick={handlePrevClick}>
                 &gt;
-            </button>
-            <div class="slides">
-                <div class="numbertext">1 / 3</div>
+            </button> */}
+            {/* <div class="slides">
                 <img src="https://images.pexels.com/photos/12227661/pexels-photo-12227661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                <div class="text">Caption Text</div>
-            </div>
-            {/* <div className="slides">
-                {sliderItems.map((slide, index) => (
-                    <div key={slide.id} className={`slide ${index === activeSlideIndex ? 'active' : ''}`} >
-                        <img src={slide.img} />
+            </div> */}
+            <a className="prev" onClick={handlePrevClick}>❮</a>
+            <a className="next" onClick={handleNextClick}>❯</a>
+            <div className="slides">
+                {sliderItems.map((slide, index=0) => (
+                    <div key={slide.id} className={`slides ${index === activeSlideIndex ? 'active' : ''}`}>
+                        <img src={slide.img} alt={`Slide ${slide.id}`} />
                     </div>
                 ))}
-            </div> */}
-            <button className="next" onClick={handleNextClick}>
+            </div>
+
+            {/* <button className="next" onClick={handleNextClick}>
                 &gt;
-            </button>
+            </button> */}
         </div>
     );
 };

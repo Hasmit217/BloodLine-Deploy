@@ -29,7 +29,7 @@ function App() {
 
                 <Navbar></Navbar>
                 {/* <BloodAvail/> */}
-                {/* <Slider sildes={sliderItems}></Slider> */}
+                {/* <Slider></Slider> */}
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/campSchedule" element={<CampSchedule />} />
