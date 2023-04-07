@@ -26,10 +26,7 @@ function App() {
         <div>
             {/* <Profile/> */}
             <Router>
-
                 <Navbar></Navbar>
-                {/* <BloodAvail/> */}
-                {/* <Slider></Slider> */}
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route path="/campSchedule" element={<CampSchedule />} />

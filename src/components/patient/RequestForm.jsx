@@ -1,10 +1,10 @@
 import React,{useState}from "react";
 import options,{bloodgroup} from "../bloodCamp/option";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
+
 
 function RequestBlood() {
-
-    const navigate = useNavigate;
     
     const [state, setState] = useState("");
     const [districts, setDistrict] = useState(""); 
@@ -58,23 +58,18 @@ function RequestBlood() {
         handleInput(e);
     }
 
-    const postData = async(e) => {
-        e.preventDefault();
-        const {name,age,gender,bloodgrp,contactName,contactNameRel,contactNum,email,address,treatment,remark,state,district,city,hospital} = user;
+    const handleClick = (e) => {
+        e.preventDefault(); 
 
-        const res = await fetch("/",{
-            method: "POST",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-                name,age,gender,bloodgrp,contactName,contactNameRel,contactNum,email,address,treatment,remark,state,district,city,hospital
-            })
+        console.log(user);
+        
+        axios.post('http://localhost:8080/bloodReq',user)
+        .then(response => {
+            console.log(response.data);
         })
-
-        const data = await res.json();
-
-        navigate("/");
+        .catch(error => {
+            console.error(error);
+        });
     }
 
     return (
@@ -198,7 +193,7 @@ function RequestBlood() {
                     </div>
                 </div>
                 <div className="br-form-submit">
-                    <button type="submit" onClick={postData}>Send Request</button>
+                    <button type="submit" onClick={handleClick}>Send Request</button>
                 </div>
             </form>
         </div>
