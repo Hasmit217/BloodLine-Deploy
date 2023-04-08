@@ -11,6 +11,7 @@ import DonorDashboard from "./donor/DonorDashboard";
 import DonorHome from "./donor/DonorHome";
 import Slider from "./layout/Slider";
 import {sliderItems} from "./bloodCamp/option";
+import RegisterCamp from "./bloodCamp/RegisterCamp";
 
 import {
     BrowserRouter as Router,
@@ -36,6 +37,7 @@ function App() {
                     <Route path="/AboutUs" element={<AboutUs/>}/>
                     <Route path="/DonorDash" element={<DonorDashboard/>}/>
                     <Route path="/DonorHome" element={<DonorHome/>}/>
+                    <Route path="/RegisterCamp" element={<RegisterCamp/>}/>
                 </Routes>
 
                 <Footer></Footer>

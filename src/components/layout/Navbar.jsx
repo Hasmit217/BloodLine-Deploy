@@ -51,7 +51,7 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Host blood camp</a>
                         <div className="dropdown-content">
                             <li>
-                                <Link to="">Register Blood Camp</Link>
+                                <Link to="/RegisterCamp">Register Blood Camp</Link>
                                 <Link to="">Learn About Hosting Blood camp</Link>
                             </li>
                         </div>

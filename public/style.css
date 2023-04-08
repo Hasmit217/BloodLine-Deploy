@@ -599,7 +599,21 @@ img{
 
 /* About Us CSS**************************************** */
 
-/* .about-container {
+.about-container {
   margin: auto;
   margin-top: 120px;
-} */
+}
+
+/* Register Camp CSS ***********************************/
+
+.rc-form{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid #d2cfcf;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  color: #4d4c4c;
+}
