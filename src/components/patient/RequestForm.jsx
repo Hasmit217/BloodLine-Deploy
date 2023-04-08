@@ -5,8 +5,6 @@ import axios from "axios";
 
 
 function RequestBlood() {
-
-    // const navigate = useNavigate;
     
     const [state, setState] = useState("");
     const [districts, setDistrict] = useState(""); 
@@ -62,24 +60,6 @@ function RequestBlood() {
 
     const handleClick = (e) => {
         e.preventDefault(); 
-
-        // setUser({
-        //     name: "Hasmitxyz",
-        //     age: 22,
-        //     gender: "male",
-        //     bloodgrp: "B+",
-        //     contactName: "Ekansh",
-        //     contactNameRel: "Father",
-        //     contactNum: 8299812669,
-        //     email: "abc@123.com",
-        //     address: "gandhinagar",
-        //     treatment: "infertility",
-        //     remark: "NA",
-        //     state: "Gujarat",
-        //     district: "gandhinagar",
-        //     city: "gandhinagar",
-        //     hospital: "hi-tech"
-        // });
 
         console.log(user);
         

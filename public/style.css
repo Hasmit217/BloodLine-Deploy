@@ -89,7 +89,7 @@ h2 {
 
 /* Footer Css ****************************************/
 
-ul{
+ul {
   text-align: left;
   /* color: aliceblue; */
 }
@@ -101,23 +101,27 @@ footer {
   bottom: 0;
   width: 100vw;
   font-size: 16px;
+  margin-left: -10px;
 }
-footer a{
+
+footer a {
   color: #8b8989;
 }
-footer a:hover{
+
+footer a:hover {
   color: #ede7e7;
 }
+
 footer * {
   box-sizing: border-box;
   border: none;
   outline: none;
 }
 
-.footer-row{
+.footer-row {
   display: flex;
   flex-direction: row;
-  margin : 0px;
+  margin: 0px;
   padding: 0px;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -125,107 +129,126 @@ footer * {
 }
 
 /* Navbar Css*********************************** */
-a{
-  color:rgb(49, 48, 48);
-  text-decoration:none;
+a {
+  color: rgb(49, 48, 48);
+  text-decoration: none;
   transform: scale(1);
   transition: all 0.2s ease-in-out 0.2s;
 }
-a:hover{
+
+a:hover {
   color: #020202;
   transform: translateY(0.5px);
   transition: all 0.1s ease-in-out 0.1s;
 }
 
-li,ul {
+li,
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.navbar{
-  display:flex;
+.navbar {
+  display: flex;
   background-color: #fceded;
-  border:none;
-  margin:0px;
-  padding:10px;
-  position : fixed;
-  width:100%;
-  top:0;
+  border: none;
+  margin: 0px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   z-index: 2;
+  margin-left: -10px;
+  /* border-bottom: 2px solid rgb(249, 120, 120); */
+  box-shadow: rgba(247, 226, 226, 0.4) 0px 2px 4px, rgba(226, 180, 180, 0.3) 0px 7px 13px -3px, rgba(190, 147, 147, 0.2) 0px -3px 0px inset;
+
 }
-.logo-img{
+
+.logo-img {
   margin-right: 35px;
-  border-radius:30%;
-  max-width:80px;
+  border-radius: 30%;
+  max-width: 80px;
 }
-.navbar-func-container{
-  margin : 0px;
+
+.navbar-func-container {
+  margin: 0px;
   display: flex;
   flex-wrap: wrap;
-  position : relative;
-  top : 25px;
+  position: relative;
+  top: 25px;
 }
-.navbar-func{
+
+.navbar-func {
   /* border:1px solid; */
-  margin:10px;
+  margin: 10px;
   padding: 10px;
-  
+
   /* text-align: justify; */
 }
-.navbar-func a{
-  display:block;
-  height:100%;
-  width : 100%
+
+.navbar-func a {
+  display: block;
+  height: 100%;
+  width: 100%
 }
-.navbar-func a:hover{
+
+.navbar-func a:hover {
   /* background-color: #b9b5b5; */
   /* max-width:100%; */
   font-size: 20px;
 }
-.dropdown-content{
-  display:none;
-  position:absolute;
+
+.dropdown-content {
+  display: none;
+  position: absolute;
   border-radius: 5px;
   background-color: #fceded;
   min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index : 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
-.dropdown-content a{
-  color:black;
-  padding:20px 20px;
-  display:block;
+
+.dropdown-content a {
+  color: black;
+  padding: 20px 20px;
+  display: block;
 }
-.navbar-func:hover .dropdown-content{display:block;}
+
+.navbar-func:hover .dropdown-content {
+  display: block;
+}
 
 /* ************************************************************************************ */
 /* CampSchecdule css******************************************************************* */
 
-.camp-container{
+.camp-container {
   box-sizing: border-box;
   /* width: 100%; */
   /* height: 20px; */
   /* margin-bottom: 50px; */
 }
-.below-nav-img{
-  height:300px;
-  width:100vw;
+
+.below-nav-img {
+  height: 300px;
+  width: 100vw;
   background-position: center;
   /* background-size: cover; */
 }
-.camp-drop-menu{
+
+.camp-drop-menu {
   position: absolute;
-  transform : translateY(4px);
+  transform: translateY(4px);
   width: 20%;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 4px;
   overflow: auto;
   max-height: 150px;
   background-color: #eae8e8;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) ;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   /* animation: slideDown 300ms ease-in-out ; */
 }
+
 /* @keyframes slideDown {
   0% { 
     opacity: 0;
@@ -237,35 +260,39 @@ li,ul {
     transform: translateY(0)
   }
 } */
-.camp-drop-item{
-  padding:5px;
+.camp-drop-item {
+  padding: 5px;
   border-bottom: 1px solid rgb(227, 222, 222);
-  cursor:pointer;
+  cursor: pointer;
 }
-.camp-drop-item:hover{
-  background-color:rgb(255, 255, 255);
+
+.camp-drop-item:hover {
+  background-color: rgb(255, 255, 255);
 }
-.search-container{
+
+.search-container {
   box-sizing: border-box;
   border-radius: 5px;
-  border:2px solid bisque;
+  border: 2px solid bisque;
   padding: 25px;
   margin: auto;
   margin-bottom: 100px;
   width: 75%;
   /* background-color: #fceded; */
 }
-.camp-drop-input{
-  border:2px solid rgb(233, 230, 230);
+
+.camp-drop-input {
+  border: 2px solid rgb(233, 230, 230);
   border-radius: 4px;
   height: 25px;
   background-color: #e6e6e6;
   width: 80%;
 }
+
 /* label{
   border: 2px solid black;
 } */
-.camp-search-form{
+.camp-search-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -273,26 +300,30 @@ li,ul {
   border-top: 1px solid black;
   padding: 10px;
 }
-.camp-subFields{
+
+.camp-subFields {
   /* margin: 5px; */
-  width:20%
+  width: 20%
 }
-.camp-subFields input{
+
+.camp-subFields input {
   background-color: #fff8f9;
   width: 100%;
   /* border: 3px solid black; */
 }
-.camp-drop-select-value{
+
+.camp-drop-select-value {
   /* height: 150px; */
   max-height: 100px;
 }
+
 /* .search-container button{
   width: 25%;
   margin-left: auto;
   margin-right: auto;
 } */
 
-.camp-submit{
+.camp-submit {
   display: flex;
   margin: 0;
   padding: 0;
@@ -300,8 +331,9 @@ li,ul {
   justify-content: center;
   margin-top: 50px;
 }
-.camp-submit button{
-  background: rgb(255, 0, 0) ;
+
+.camp-submit button {
+  background: rgb(255, 0, 0);
   border-radius: 5px;
   width: 20%;
   height: 30px;
@@ -311,41 +343,45 @@ li,ul {
 
 /* ****************************************************************************************/
 /* Blood Request Form css*************************************************************** */
-.br-container{
+.br-container {
   /* display: flex; */
   box-sizing: border-box;
-  margin:32px;
+  margin: 32px;
   margin-top: 10%;
 }
-.br-heading h1{
+
+.br-heading h1 {
   color: #b11717;
 }
+
 /* .br-container h1{
   border-bottom: #c50724;
 }  */
 /* .br-sub-container.h2{
   border-bottom: 2px solid red;
 } */
-.br-form{
+.br-form {
   display: flex;
   flex-wrap: wrap;
-  margin:20px;
-  align-items:flex-start;
+  margin: 20px;
+  align-items: flex-start;
   justify-content: center;
   border: 1px solid #d2cfcf;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width:100%;
+  width: 100%;
   color: #4d4c4c;
 }
-.br-sub-container{
-  margin:20px;
+
+.br-sub-container {
+  margin: 20px;
   padding: 20px;
-  justify-content:first baseline;
+  justify-content: first baseline;
   border-left: 1px dotted #b5b5b5;
   width: 19%;
-  
+
 }
-.br-sub-container-field{
+
+.br-sub-container-field {
   display: block;
   justify-content: top;
   margin: 10px;
@@ -356,63 +392,66 @@ li,ul {
   color: red;
 }
 
-.br-form-submit{
+.br-form-submit {
   display: flex;
   margin-top: 50px;
   justify-content: center;
   align-items: center;
 }
 
-input{
+input {
   background-color: rgb(254, 251, 251);
   border: 1px solid rgb(202, 202, 202);
-  border-radius:2px ;
+  border-radius: 2px;
   width: 100%;
-  height:30px;
+  height: 30px;
   /* margin: auto; */
 }
-select{
+
+select {
   background-color: rgb(254, 251, 251);
   border: 1px solid rgb(202, 202, 202);
-  border-radius:2px ;
+  border-radius: 2px;
   /* max-width: 100px; */
   width: 100%;
-  height:30px;
-}
-textarea{
-  background-color: rgb(254, 251, 251);
-  border: 1px solid rgb(202, 202, 202);
-  border-radius:2px ;
-  width: 100%;
-  height:60px;
+  height: 30px;
 }
 
-button{
-  width:20%;
+textarea {
+  background-color: rgb(254, 251, 251);
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 2px;
+  width: 100%;
+  height: 60px;
+}
+
+button {
+  width: 20%;
   height: 40px;
   border-radius: 10px;
-  border:3px solid rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
   background-color: rgb(230 29 29);
   font-size: 18px;
   color: #eae8e8;
   transition: 0.5s;
 }
-button:hover{
+
+button:hover {
   color: white;
-  background-color:#2a2222;
+  background-color: #2a2222;
 }
 
-option{
+option {
   background-color: #fceded;
 }
 
 /* ====================== donor dashboard */
 
-.DonorDashboard{
+.DonorDashboard {
   margin-top: 150px;
 }
 
-.DonorDashboardUl{
+.DonorDashboardUl {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -426,7 +465,7 @@ option{
   /* height: 400px; */
 }
 
-.DonorDashboardLi{
+.DonorDashboardLi {
   display: fixed;
   display: block;
   border: 1px solid;
@@ -439,11 +478,11 @@ option{
   width: 200px;
 }
 
-.DonorDashboardLi a{
+.DonorDashboardLi a {
   color: rgb(69, 69, 69);
 }
 
-.DonorProfileImg{
+.DonorProfileImg {
   /* margin-top: 150px; */
   height: 120px;
   width: 120px;
@@ -452,41 +491,41 @@ option{
   border-radius: 80px;
 }
 
-.topdiv{
+.topdiv {
   display: flex;
   /* margin-top: 10px; */
   height: 170px;
   /* margin: auto; */
   margin-top: -44px;
   width: 100%;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   background-color: #eeeded;
 }
 
-.DonorHeadDiv{
+.DonorHeadDiv {
   margin-left: 540px;
   margin-top: 40px;
   /* text-align: center; */
 }
 
-.DonorProfileImgDiv{
+.DonorProfileImgDiv {
   margin-top: 25px;
   margin-left: 230px;
 }
 
-.DonorHomeDiv{
+.DonorHomeDiv {
   margin-left: 190px;
   /* margin-bottom: -50px; */
   margin-top: 30px;
 }
 
-.DonorHomeh2{
+.DonorHomeh2 {
   text-align: left;
   margin-bottom: 30px;
   /* text-shadow: 2px 2px #f7c4c4; */
   color: #ff3e5b;
   border: 1px solid #f2bebe;
-  border-radius: 4px ;
+  border-radius: 4px;
   height: 60px;
   width: 620px;
   padding-top: 23px;
@@ -494,27 +533,87 @@ option{
   background-color: rgb(255, 224, 224);
 }
 
-.DonorMainDiv{
+.DonorMainDiv {
   display: flex;
 }
 
-.ProfileDiv{
+.ProfileDiv {
   margin-top: 150px;
 }
 
 /* ====================================================== */
 
 /* Slider CSS**************************************** */
-
-.slider{
-  margin: auto;
-  margin-top: 110px;
-  display: flex;
+/* .slider-container {
+  position: relative;
+  height: 450px;
 }
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  border: 2px solid red;
+  margin-top: 112px;
+  object-fit: cover;
+  height: 450px;
+}
+
+.slide {
+  flex: 1 0 100%;
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  height: 450px;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prev,
+.next {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+img{
+  width:100%;
+  height: 100%;
+} */
 
 /* About Us CSS**************************************** */
 
-.about-container{
-  margin:auto;
+.about-container {
+  margin: auto;
   margin-top: 120px;
+}
+
+/* Register Camp CSS ***********************************/
+
+.rc-form{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid #d2cfcf;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  color: #4d4c4c;
 }

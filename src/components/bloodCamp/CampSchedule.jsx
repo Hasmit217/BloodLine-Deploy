@@ -5,6 +5,7 @@ function CampSchedule() {
 
     const [state, setState] = useState("");
     const [districts, setDistrict] = useState("");
+    const [city,setCity] = useState("");
 
     const handleState = (e) => {
         const value = e.target.value;
@@ -24,7 +25,7 @@ function CampSchedule() {
                     <div className="camp-subFields">
                         <label htmlFor="state">State<span class="required-field"></span></label>
                         {/* <br></br> */}
-                        <select name="State" onChange={handleState} required>
+                        <select name="State" onChange={{handleState}} required>
                             <option value="" selected disabled>Select State</option>
                             {options.map((item) => {
                                 return <option value={item.label}>{item.label}</option>
@@ -51,7 +52,7 @@ function CampSchedule() {
                     
                     <div className="camp-subFields">
                         <label htmlFor="state">City</label>
-                        <input type="text" placeholder="Optional"></input>
+                        <input type="text" value={city} onChange={(e)=>{setCity(e.target.value)}} placeholder="Optional"></input>
                     </div>
                     <div className="camp-subFields">
                         <label htmlFor="state">Camp Date<span class="required-field"></span></label>
