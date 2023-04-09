@@ -34,8 +34,10 @@ function RegisterCamp() {
         setState(value);
     }
     const handleDistrict = (e) => {
+        e.preventDefault();
         const value = e.target.value;
         setDistrict(value);
+        console.log(districts);
     }   
     const handleBloodBank = (e) =>{
         const value = e.target.value;
@@ -51,6 +53,7 @@ function RegisterCamp() {
         handleInput(e);
     }
     const handleDistrictInput = (e) =>{
+        e.preventDefault();
         handleDistrict(e);
         handleInput(e);
     }

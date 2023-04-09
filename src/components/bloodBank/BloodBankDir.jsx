@@ -1,6 +1,17 @@
 import React,{useState} from "react";
 import options from "../bloodCamp/option";
+import Table from "../layout/Table"
 
+const bloodbank =[
+    {name:"abs",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
+    {name:"adgv",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
+    {name:"adbabab",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
+    {name:"sfbsbns",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
+    {name:"sfnbfxgz",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
+]
+const headBloodbank=[
+    {name:"Name",address:"Address",phone:"Contact No",email:"Email Id"}
+]
 
 function BloodBankDir(){
     const [state, setState] = useState("");
@@ -62,9 +73,14 @@ function BloodBankDir(){
                 <div className="camp-submit">
                     <button type="submit">Search</button>
                 </div>
+            </div>
 
+            <div className="bloodBankTable">
+                <h1 style={{color :"#b11717"}}>Search Result</h1>
+                <Table data={bloodbank} headingData={headBloodbank}/>
             </div>
         </div>
+
     )
 }
 
