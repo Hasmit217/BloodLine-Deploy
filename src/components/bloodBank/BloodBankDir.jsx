@@ -1,23 +1,29 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import options from "../bloodCamp/option";
 import Table from "../layout/Table"
 
-const bloodbank =[
-    {name:"abs",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
-    {name:"adgv",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
-    {name:"adbabab",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
-    {name:"sfbsbns",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
-    {name:"sfnbfxgz",address:"andlvlal",phone:"8746544465",email:"kbafkj@gmial.com"},
+const bloodbank = [
+    { name: "abs", address: "andlvlal", phone: "8746544465", email: "kbafkj@gmial.com" },
+    { name: "adgv", address: "andlvlal", phone: "8746544465", email: "kbafkj@gmial.com" },
+    { name: "adbabab", address: "andlvlal", phone: "8746544465", email: "kbafkj@gmial.com" },
+    { name: "sfbsbns", address: "andlvlal", phone: "8746544465", email: "kbafkj@gmial.com" },
+    { name: "sfnbfxgz", address: "andlvlal", phone: "8746544465", email: "kbafkj@gmial.com" },
 ]
-const headBloodbank=[
-    {name:"Name",address:"Address",phone:"Contact No",email:"Email Id"}
+const headBloodbank = [
+    { name: "Name", address: "Address", phone: "Contact No", email: "Email Id" }
 ]
 
-function BloodBankDir(){
+function BloodBankDir() {
     const [state, setState] = useState("");
     const [districts, setDistrict] = useState("");
-    const [blood,setBlood] = useState("");
+    const [blood, setBlood] = useState("");
 
+    const renderTable = (e) => {
+        <div className="bloodBankTable">
+            <h1 style={{ color: "#b11717" }}>Search Result</h1>
+            <Table data={bloodbank} headingData={headBloodbank} />
+        </div>
+    }
     const handleState = (e) => {
         const value = e.target.value;
         setState(value);
@@ -35,7 +41,7 @@ function BloodBankDir(){
         <div className="camp-container">
             <img className="below-nav-img" src="images/belownavimg.webp"></img>
             <div className="search-container">
-                <h1 style={{color :"#b11717"}}>Search Nearest Blood Bank</h1>
+                <h1 style={{ color: "#b11717" }}>Search Nearest Blood Bank</h1>
                 <form action="" className="camp-search-form">
                     <div className="camp-subFields">
                         <label htmlFor="state">State<span class="required-field"></span></label>
@@ -71,13 +77,13 @@ function BloodBankDir(){
                     </div>
                 </form>
                 <div className="camp-submit">
-                    <button type="submit">Search</button>
+                    <button type="button" onClick={() => {
+                        <div className="bloodBankTable">
+                            <h1 style={{ color: "#b11717" }}>Search Result</h1>
+                            <Table data={bloodbank} headingData={headBloodbank} />
+                        </div>
+                    }}>Search</button>
                 </div>
-            </div>
-
-            <div className="bloodBankTable">
-                <h1 style={{color :"#b11717"}}>Search Result</h1>
-                <Table data={bloodbank} headingData={headBloodbank}/>
             </div>
         </div>
 

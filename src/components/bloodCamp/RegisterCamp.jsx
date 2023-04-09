@@ -1,14 +1,12 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import options from "../bloodCamp/option";
 import axios from "axios";
 
 function RegisterCamp() {
 
-    const [state, setState] = useState("");
-    const [districts, setDistrict] = useState(""); 
-    const [bloodBank, setBloodBank] = useState(""); 
+    const[bloodBank,setBloodBank] = useState([]);
 
-    const [user,setUser] = useState({
+    const [user, setUser] = useState({
         name: "",
         orgName: "",
         orgType: "",
@@ -20,98 +18,62 @@ function RegisterCamp() {
         state: "",
         district: "",
         city: "",
-        bldBank:"",
-        campLat:"",
-        campLong:"",
-        orgPerName:"",
-        orgPerCont:"",
-        orgPerEmail:"",
+        bldBank: "",
+        campLat: "",
+        campLong: "",
+        orgPerName: "",
+        orgPerCont: "",
+        orgPerEmail: "",
         remark: ""
     });
-    console.log(districts);
 
-    const handleState = (e) => {
-        e.preventDefault(); 
-
-        const value = e.target.value;
-        setState(value);
-    }
-    const handleDistrict = async (e) => {
-        e.preventDefault(); 
-        const val = e.target.value;
-        setDistrict(val);
-        setUser({...user,district:val})
-
-        console.log(districts);
-
-        const abc = districts;
-
-        try{
-            const res = await axios.get("http://localhost:8080/c/showBloodBanks",{
-                abc,
-            })
-            .then(response => {
-                console.log(response.message);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+    const passDistrict = async (e) => {
+        e.preventDefault();
+        try {
+            // console.log(user.district);
+            const res = await axios.post("http://localhost:8080/c/showBloodBanks", { chosenDistrict: user.district })
+                .then(response => {
+                    setBloodBank(response.data);
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
         catch (e) {
             console.log(e);
         }
-        
-        // axios.get('http://localhost:8080/showBloodBanks',{dis:districts})
-         
-    }   
-
-    const handleBloodBank = (e) =>{
-        e.preventDefault(); 
-
-        const value = e.target.value;
-        setBloodBank(value);
     }
-    const handleInput = (e) =>{
-        e.preventDefault(); 
+
+    const handleInput = (e) => {
+        e.preventDefault();
 
         let value = e.target.value;
         let name = e.target.name;
-        setUser({...user,[name]:value})
+        setUser({ ...user, [name]: value })
     }
-    const handleStateInput = (e) =>{
-        e.preventDefault(); 
 
-        handleState(e);
-        handleInput(e);
-    }
-    const handleDistrictInput = (e) =>{
-        e.preventDefault(); 
 
-        handleDistrict(e);
+    const handleCityInput = (e) => {
         handleInput(e);
-    }
-    const handleBloodBankInput = (e) =>{
-        e.preventDefault(); 
-
-        handleBloodBank(e);
-        handleInput(e);
+        passDistrict(e);
     }
 
     const handleClick = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         console.log(user);
-        
-        axios.post('http://localhost:8080/registerCamp',user)
-        .then(response => {
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.error(error);
-        });
+
+        axios.post('http://localhost:8080/registerCamp', user)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
-    
+
     return (
         <div className="br-container">
             <div className="br-heading"><h1>Register BloodCamp</h1></div>
@@ -161,7 +123,7 @@ function RegisterCamp() {
                         <div className="br-sub-container-field">
                             <label for="state">State<span class="required-field"></span></label>
                             <br></br>
-                            <select name="state" onChange={handleStateInput} value={user.state} required>
+                            <select name="state" onChange={handleInput} value={user.state} required>
                                 <option value="" selected disabled>Select State</option>
                                 {options.map((item) => {
                                     return <option value={item.label}>{item.label}</option>
@@ -172,10 +134,10 @@ function RegisterCamp() {
                         <div className="br-sub-container-field">
                             <label for="district">District<span class="required-field"></span></label>
                             <br></br>
-                            <select name="district" onChange={handleDistrictInput} value={user.district} required>
+                            <select name="district" onChange={handleInput} value={user.district} required>
                                 <option value="" selected disabled>Select District</option>
                                 {options.map((item) => {
-                                    if (item.label === state) {
+                                    if (item.label === user.state) {
                                         return item.district.map((itemDis) => {
                                             return <option value={itemDis}>{itemDis}</option>
                                             {/* console.log(itemDis); */ }
@@ -187,12 +149,19 @@ function RegisterCamp() {
                         <div className="br-sub-container-field">
                             <label for="city">City<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name="city" value={user.city} onChange={handleInput} required></input>
+                            <input type="text" name="city" value={user.city} onChange={handleCityInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="bldBank">Blood Bank<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name="bldBank" value={user.bldBank} onChange={handleInput} required></input>
+                            <select name="bldBank" onChange={handleInput} value={user.bldBank} required>
+                                <option value="" selected disabled>Select Blood Bank</option>
+                                {bloodBank.map((item) => {
+                                    return <option value={item.BloodBankName}>{item.BloodBankName}</option>
+                                    {/* console.log(item.label); */ }
+                                })}
+                            </select>
+                            {/* <input type="text" name="bldBank" value={user.bldBank} onChange={handleInput} required></input> */}
                         </div>
                         <div className="br-sub-container-field">
                             <label for="campLat">Latitude<span class="required-field"></span></label>
