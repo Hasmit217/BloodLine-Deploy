@@ -27,34 +27,72 @@ function RegisterCamp() {
         orgPerCont:"",
         orgPerEmail:"",
         remark: ""
-    })
+    });
+    console.log(districts);
 
     const handleState = (e) => {
+        e.preventDefault(); 
+
         const value = e.target.value;
         setState(value);
     }
-    const handleDistrict = (e) => {
-        const value = e.target.value;
-        setDistrict(value);
+    const handleDistrict = async (e) => {
+        e.preventDefault(); 
+        const val = e.target.value;
+        setDistrict(val);
+        setUser({...user,district:val})
+
+        console.log(districts);
+
+        const abc = districts;
+
+        try{
+            const res = await axios.get("http://localhost:8080/c/showBloodBanks",{
+                abc,
+            })
+            .then(response => {
+                console.log(response.message);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
+        
+        // axios.get('http://localhost:8080/showBloodBanks',{dis:districts})
+         
     }   
+
     const handleBloodBank = (e) =>{
+        e.preventDefault(); 
+
         const value = e.target.value;
         setBloodBank(value);
     }
     const handleInput = (e) =>{
+        e.preventDefault(); 
+
         let value = e.target.value;
         let name = e.target.name;
         setUser({...user,[name]:value})
     }
     const handleStateInput = (e) =>{
+        e.preventDefault(); 
+
         handleState(e);
         handleInput(e);
     }
     const handleDistrictInput = (e) =>{
+        e.preventDefault(); 
+
         handleDistrict(e);
         handleInput(e);
     }
     const handleBloodBankInput = (e) =>{
+        e.preventDefault(); 
+
         handleBloodBank(e);
         handleInput(e);
     }
@@ -64,7 +102,7 @@ function RegisterCamp() {
 
         console.log(user);
         
-        axios.post('http://localhost:8080/bloodReq',user)
+        axios.post('http://localhost:8080/registerCamp',user)
         .then(response => {
             console.log(response.data);
         })
@@ -73,6 +111,7 @@ function RegisterCamp() {
         });
     }
 
+    
     return (
         <div className="br-container">
             <div className="br-heading"><h1>Register BloodCamp</h1></div>
