@@ -64,7 +64,7 @@ function RegisterCamp() {
 
         console.log(user);
 
-        axios.post('http://localhost:8080/registerCamp', user)
+        axios.post('http://localhost:8080/d/registerCamp', user)
             .then(response => {
                 console.log(response.data);
             })
