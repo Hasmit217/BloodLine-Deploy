@@ -376,7 +376,8 @@ ul {
   margin: 20px;
   padding: 20px;
   justify-content: first baseline;
-  border-left: 1px dotted #b5b5b5;
+  /* border-left: 1px dotted #b5b5b5; */
+  border-right: 1px dotted #b5b5b5;
   width: 19%;
 
 }
@@ -616,4 +617,43 @@ img{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
   color: #4d4c4c;
+}
+
+/* Table CSS ******************************************/
+
+.bloodBankTable{
+  margin: 50px;
+}
+.tableContainer{
+  margin: auto;
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid rgb(145, 6, 6);
+}
+table{
+  width: 100%;
+  /* border: 1px solid red; */
+}
+tr{
+  background-color: #dddddd;
+}
+
+td{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+  border: 1px solid #000000;
+  background-color: #b11717;
+  color:white;
+  text-align: center;
+  padding: 8px;
+}
+
+/* container **************************/
+.container{
+  margin:auto;
+  margin-top: 110px;
 }
