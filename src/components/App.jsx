@@ -10,8 +10,10 @@ import AboutUs from "./dashboard/AboutUs";
 import DonorDashboard from "./donor/DonorDashboard";
 import DonorHome from "./donor/DonorHome";
 import Slider from "./layout/Slider";
-import {sliderItems} from "./bloodCamp/option";
+import { sliderItems } from "./bloodCamp/option";
 import RegisterCamp from "./bloodCamp/RegisterCamp";
+import { Auth0Provider } from "@auth0/auth0-react";
+import UserLogin from "./donor/DonorLogin";
 
 import {
     BrowserRouter as Router,
@@ -24,25 +26,33 @@ import {
 
 function App() {
     return (
-        <div>
-            {/* <Profile/> */}
-            <Router>
-                <Navbar></Navbar>
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route path="/campSchedule" element={<CampSchedule />} />
-                    <Route path="/requestBloodForm" element={<RequestBloodForm />} />
-                    <Route path="/bloodAvailSearch" element={<BloodAvail/>}/>
-                    <Route path="/bloodBankDir" element={<BloodBankDir/>}/>
-                    <Route path="/AboutUs" element={<AboutUs/>}/>
-                    <Route path="/DonorDash" element={<DonorDashboard/>}/>
-                    <Route path="/DonorHome" element={<DonorHome/>}/>
-                    <Route path="/RegisterCamp" element={<RegisterCamp/>}/>
-                </Routes>
+        <Auth0Provider
+            domain="dev-su2ro5wbkodq3ijt.us.auth0.com"
+            clientId="K7fyBMA0EFY2Gaio7ZbxVCoMkwFvZrWo"
+            authorizationParams={{
+                redirect_uri: window.location.origin
+            }}>
+            <div>
+                {/* <Profile/> */}
+                <Router>
+                    <Navbar></Navbar>
+                    <Routes>
+                        <Route exact path="/" element={<Home />} />
+                        <Route path="/campSchedule" element={<CampSchedule />} />
+                        <Route path="/requestBloodForm" element={<RequestBloodForm />} />
+                        <Route path="/bloodAvailSearch" element={<BloodAvail />} />
+                        <Route path="/bloodBankDir" element={<BloodBankDir />} />
+                        <Route path="/AboutUs" element={<AboutUs />} />
+                        <Route path="/DonorDash" element={<DonorDashboard />} />
+                        <Route path="/DonorHome" element={<DonorHome />} />
+                        <Route path="/RegisterCamp" element={<RegisterCamp />} />
+                        <Route path="/DonorLogin" element={<UserLogin />} />
+                    </Routes>
 
-                <Footer></Footer>
-            </Router>
-        </div>
+                    <Footer></Footer>
+                </Router>
+            </div>
+        </Auth0Provider>
     )
 }
 

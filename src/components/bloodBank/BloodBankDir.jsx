@@ -17,13 +17,12 @@ function BloodBankDir() {
     const [state, setState] = useState("");
     const [districts, setDistrict] = useState("");
     const [blood, setBlood] = useState("");
+    const [showTable,setShowTable] = useState(false);
 
-    const renderTable = (e) => {
-        <div className="bloodBankTable">
-            <h1 style={{ color: "#b11717" }}>Search Result</h1>
-            <Table data={bloodbank} headingData={headBloodbank} />
-        </div>
+    const handleSearchClick = () =>{
+        setShowTable(true);
     }
+    
     const handleState = (e) => {
         const value = e.target.value;
         setState(value);
@@ -77,15 +76,20 @@ function BloodBankDir() {
                     </div>
                 </form>
                 <div className="camp-submit">
-                    <button type="button" onClick={() => {
+                    <button type="button" onClick={handleSearchClick}>Search</button>
+                </div>
+                <div>
+                    {showTable && (
                         <div className="bloodBankTable">
                             <h1 style={{ color: "#b11717" }}>Search Result</h1>
                             <Table data={bloodbank} headingData={headBloodbank} />
                         </div>
-                    }}>Search</button>
+                    )}
                 </div>
             </div>
         </div>
+
+
 
     )
 }
