@@ -14,21 +14,24 @@ app.use(express.static("public"));
 //================ routes and models ========================
 
 const BloodRequest = require("./models/bloodReq");
-const bloodReqRoute = require("./routes/bloodReq");
+const BloodReqRoute = require("./routes/bloodReq");
 
 const BloodBank = require("./models/bloodBanks");
 const BloodBankRoute = require("./routes/bloodBanks");
 
-const showBloodBanksRoute = require("./routes/showBloodBanks");
+const ShowBloodBanksRoute = require("./routes/showBloodBanks");
+
+const BloodCampRoute = require("./routes/bloodCamps");
 
 //===========================================================
 
 
 mongoose.connect("mongodb+srv://ekanshlohiya98:Bloodline%40she98@cluster0.9k4kzet.mongodb.net/bloodlineDB");
 
-app.use("/a",bloodReqRoute);
+app.use("/a",BloodReqRoute);
 app.use("/b",BloodBankRoute);
-app.use("/c",showBloodBanksRoute);
+app.use("/c",ShowBloodBanksRoute);
+app.use("/d",BloodCampRoute);
 
 app.listen(8080, function() {
     console.log("Server started on port 8080");

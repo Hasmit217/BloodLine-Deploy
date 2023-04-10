@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const BloodBankSchema = new mongoose.Schema({
-   SrNo: {type:String},
+   SrNo: {type:String}, 
    BloodBankName: {type:String},
    State:{type:String},
    District: {type:String},

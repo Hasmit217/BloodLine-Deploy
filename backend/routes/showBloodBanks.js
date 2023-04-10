@@ -5,7 +5,7 @@ const router = require("express").Router();
 console.log("opened");
 router.get("/showBloodBanks",function(req,res){
     // console.log(req.body);
-    const districtval = req.body.abc;
+    const districtval = req.body.chosenDistrict;
     console.log(districtval);
     res.send(districtval);
     // console.log(req.body);

@@ -28,7 +28,7 @@ function RegisterCamp() {
         orgPerEmail:"",
         remark: ""
     });
-    console.log(districts);
+    console.log(districts); //testing
 
     const handleState = (e) => {
         e.preventDefault(); 
@@ -40,16 +40,11 @@ function RegisterCamp() {
         e.preventDefault(); 
         const val = e.target.value;
         setDistrict(val);
-        setUser({...user,district:val})
 
         console.log(districts);
 
-        const abc = districts;
-
         try{
-            const res = await axios.get("http://localhost:8080/c/showBloodBanks",{
-                abc,
-            })
+            const res = await axios.get("http://localhost:8080/c/showBloodBanks",{chosenDistrict: val})
             .then(response => {
                 console.log(response.message);
             })
@@ -102,7 +97,7 @@ function RegisterCamp() {
 
         console.log(user);
         
-        axios.post('http://localhost:8080/registerCamp',user)
+        axios.post('http://localhost:8080/d/registerCamp',user)
         .then(response => {
             console.log(response.data);
         })
@@ -224,7 +219,7 @@ function RegisterCamp() {
                         <div className="br-sub-container-field">
                             <label for="orgPerEmail">Organizer Email<span class="required-field"></span></label>
                             <br></br>
-                            <input type="email" name="contEmail" value={user.orgPerEmail} onChange={handleInput} required></input>
+                            <input type="email" name="orgPerEmail" value={user.orgPerEmail} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="remark">Remarks</label>

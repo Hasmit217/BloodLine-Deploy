@@ -3,7 +3,7 @@ const router = require("express").Router();
 
 router.post("/bloodBanks",async(req,res) => {
     console.log(req.body);
-    const bloodBank = new BloodBank({
+    const bloodBank = new BloodBank({ 
         SrNo: req.body.SrNo,
         BloodBankName: req.body.BloodBankName,
         State:req.body.State,
