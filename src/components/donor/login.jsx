@@ -1,14 +1,16 @@
 import React from 'react'
 import firebase from './firebase'
+import { Link } from 'react-router-dom'
+
 
 class App extends React.Component {
-  handleChange = (e) =>{
-    const {name, value } = e.target
+  handleChange = (e) => {
+    const { name, value } = e.target
     this.setState({
-        [name]: value
-      })
+      [name]: value
+    })
   }
-  configureCaptcha = () =>{
+  configureCaptcha = () => {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
       'size': 'invisible',
       'callback': (response) => {
@@ -26,19 +28,19 @@ class App extends React.Component {
     console.log(phoneNumber)
     const appVerifier = window.recaptchaVerifier;
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-        .then((confirmationResult) => {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          window.confirmationResult = confirmationResult;
-          console.log("OTP has been sent")
-          // ...
-        }).catch((error) => {
-          // Error; SMS not sent
-          // ...
-          console.log("SMS not sent")
-        });
+      .then((confirmationResult) => {
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        window.confirmationResult = confirmationResult;
+        console.log("OTP has been sent")
+        // ...
+      }).catch((error) => {
+        // Error; SMS not sent
+        // ...
+        console.log("SMS not sent")
+      });
   }
-  onSubmitOTP = (e) =>{
+  onSubmitOTP = (e) => {
     e.preventDefault()
     const code = this.state.otp
     console.log(code)
@@ -54,20 +56,25 @@ class App extends React.Component {
     });
   }
   render() {
+
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      <Link to="/DonorDash"></Link>
+    }
     return (
       <div className="User-login-container">
-        <h2>Login Form</h2>
-        <form onSubmit={this.onSignInSubmit}>
-          <div id="sign-in-button"></div>
-          <input type="number" name="mobile" placeholder="Mobile number" required onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
-        </form>
-
-        <h2>Enter OTP</h2>
-        <form onSubmit={this.onSubmitOTP}>
-          <input type="number" name="otp" placeholder="OTP Number" required onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
-        </form>
+        <h1 style={{ color: "#b11717" }}>Login Form</h1>
+        <div className='login-form'>
+          <form onSubmit={this.onSignInSubmit}>
+            <div id="sign-in-button"></div>
+            <input className="loginForm-input" type="number" name="mobile" placeholder="Mobile number" required onChange={this.handleChange} />
+            <button type="submit">Get OTP</button>
+          </form>
+          <form onSubmit={this.onSubmitOTP}>
+            <input className="loginForm-input" type="number" name="otp" placeholder="OTP Number" required onChange={this.handleChange} />
+            <button onClick={handleSubmit} type="submit">Login</button>
+          </form>
+        </div>
       </div>
     )
   }

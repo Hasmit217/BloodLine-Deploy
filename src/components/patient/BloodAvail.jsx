@@ -21,7 +21,7 @@ function BloodAvail() {
 
     return (
         <div className="camp-container">
-            <img className="below-nav-img" src="images/belownavimg.webp"></img>
+            <img className="below-nav-img" src="images/below_nav_img.jpeg"></img>
             <div className="search-container">
                 <h1 style={{color :"#b11717"}}>Search Blood Availability</h1>
                 <form action="" className="camp-search-form">

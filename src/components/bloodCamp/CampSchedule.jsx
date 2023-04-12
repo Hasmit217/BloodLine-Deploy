@@ -18,14 +18,14 @@ function CampSchedule() {
 
     return (
         <div className="camp-container">
-            <img className="below-nav-img" src="images/belownavimg.webp"></img>
+            <img className="below-nav-img" src="images/below_nav_img.jpeg"></img>
             <div className="search-container">
                 <h1 style={{color :"#b11717"}}>Camp Schedule</h1>
                 <form action="" className="camp-search-form">
                     <div className="camp-subFields">
                         <label htmlFor="state">State<span class="required-field"></span></label>
                         {/* <br></br> */}
-                        <select name="State" onChange={{handleState}} required>
+                        <select name="State" onChange={handleState} required>
                             <option value="" selected disabled>Select State</option>
                             {options.map((item) => {
                                 return <option value={item.label}>{item.label}</option>
