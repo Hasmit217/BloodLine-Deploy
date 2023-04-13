@@ -715,3 +715,72 @@ th {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* Blood bank Login CSS************** */
+.bldBankLogin-container {
+  margin: auto;
+  margin-top: 110px;
+  margin-right: -8px;
+  display: flex;
+}
+
+.bldCell-img {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-left: -8px;
+  margin-top: -9px;
+  flex-basis: 60%;
+}
+
+.bldCell-img img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+.bldBankLogin {
+  box-sizing: border-box;
+  margin: auto;
+  background-color: #F15A59;
+  flex-basis: 40%;
+  height: 507px;
+  margin-top: -5px;
+  flex-grow: 1;
+  padding: 83px;
+}
+
+.bblwhite-container {
+ 
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+.bblwhite-container button{
+  margin: 10px;
+  width: 54%;
+  height: 46px;
+}
+
+.bbl-form {
+  padding: 10px;
+}
+
+/* RegisterBloodBank CSS************* */
+
+.regBldBankContainer{
+  margin-top: 120px;
+}
+
+/* BLoodBankDashBoard CSS************************* */
+
+.bldDash-container{
+  margin-top: 120px;
+}

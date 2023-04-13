@@ -33,6 +33,7 @@ class App extends React.Component {
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
         console.log("OTP has been sent")
+        this.props.history.push('/DonorDash');
         // ...
       }).catch((error) => {
         // Error; SMS not sent
@@ -72,7 +73,7 @@ class App extends React.Component {
           </form>
           <form onSubmit={this.onSubmitOTP}>
             <input className="loginForm-input" type="number" name="otp" placeholder="OTP Number" required onChange={this.handleChange} />
-            <button onClick={handleSubmit} type="submit">Login</button>
+            <button onClick={this.onSubmitOTP} type="submit">Login</button>
           </form>
         </div>
       </div>

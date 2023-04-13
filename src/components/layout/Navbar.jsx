@@ -35,7 +35,7 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Dashboard</a>
                         <div className="dropdown-content">
                             <li>
-                                <Link to="/">Home</Link>
+                                <Link to="/DonorDash">Home</Link>
                                 <Link to="/AboutUs">About</Link>
                                 <Link to="/camp">Contact Us</Link>
                                 <Link to="/">Notification/News</Link>
@@ -65,11 +65,9 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Blood Bank Login</a>
                         <div className="dropdown-content">
                             <li>
-                                {/* <Link to="">{<LoginButton/>}</Link>
-                                <Link to="">Register Blood bank</Link> */}
-                                    <LoginButton/>
-                                    <LogoutButton/>
-                                
+                                {/* <Link to="">{<LoginButton/>}</Link> */}
+                                <Link to="/BloodBankLogin">Blood Bank Login</Link>
+                                <Link to="/registerBloodBank">Register Blood bank</Link>
                             </li>
                         </div>
                     </div>

@@ -14,6 +14,9 @@ import { sliderItems } from "./bloodCamp/option";
 import RegisterCamp from "./bloodCamp/RegisterCamp";
 import { Auth0Provider } from "@auth0/auth0-react";
 import UserLogin from "./donor/DonorLogin";
+import BloodBankLogin from "./bloodBank/BloodBankLogin";
+import RegisterBloodBank from "./bloodBank/RegisterBloodBank";
+import BldBankDash from "./bloodBank/BloodBankDashBoard";
 
 import {
     BrowserRouter as Router,
@@ -47,6 +50,9 @@ function App() {
                         <Route path="/DonorHome" element={<DonorHome />} />
                         <Route path="/RegisterCamp" element={<RegisterCamp />} />
                         <Route path="/DonorLogin" element={<UserLogin />} />
+                        <Route path="/BloodBankLogin" element={<BloodBankLogin/>}/>
+                        <Route path="/registerBloodBank" element={<RegisterBloodBank/>}/>
+                        <Route path="/bloodBankDash" element={<BldBankDash/>}/>
                     </Routes>
 
                     <Footer></Footer>
