@@ -11,7 +11,7 @@ const BloodCampSchema = new mongoose.Schema({
     state: {type:String},
     district: {type:String},
     city: {type:String},
-    bldCmp: {type:String},
+    bldBank: {type:String},
     campLat: {type:String},
     campLong: {type:String},
     address: {type:String},

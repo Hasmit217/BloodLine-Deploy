@@ -17,6 +17,9 @@ import UserLogin from "./donor/DonorLogin";
 import BloodBankLogin from "./bloodBank/BloodBankLogin";
 import RegisterBloodBank from "./bloodBank/RegisterBloodBank";
 import BldBankDash from "./bloodBank/BloodBankDashBoard";
+import News from "./news/News";
+import DonorDir from "./patient/DonorsDirectory";
+import RegVolDonor from "./donor/RegVolunteerDonor"
 
 import {
     BrowserRouter as Router,
@@ -33,12 +36,16 @@ function App() {
             domain="dev-su2ro5wbkodq3ijt.us.auth0.com"
             clientId="K7fyBMA0EFY2Gaio7ZbxVCoMkwFvZrWo"
             authorizationParams={{
-                redirect_uri: window.location.origin
+                redirect_uri: "http://localhost:3000/bloodBankDash"
+                
             }}>
             <div>
                 {/* <Profile/> */}
                 <Router>
                     <Navbar></Navbar>
+
+                    {/* <BldBankDash/> */}
+                    {/* <RegisterBloodBank style={{'margin-top':'120px'}}/> */}
                     <Routes>
                         <Route exact path="/" element={<Home />} />
                         <Route path="/campSchedule" element={<CampSchedule />} />
@@ -53,6 +60,9 @@ function App() {
                         <Route path="/BloodBankLogin" element={<BloodBankLogin/>}/>
                         <Route path="/registerBloodBank" element={<RegisterBloodBank/>}/>
                         <Route path="/bloodBankDash" element={<BldBankDash/>}/>
+                        <Route path="/donorDirectory" element={<DonorDir/>}/>
+                        <Route path="/news" element=<News/>/>
+                        <Route path="/RegistrationVolDonor" element=<RegVolDonor/>/>
                     </Routes>
 
                     <Footer></Footer>

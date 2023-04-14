@@ -28,6 +28,7 @@ const BloodBankSchema = new mongoose.Schema({
    DateofRenewal: {type:String},
    Latitude: {type:String},
    Longitude: {type:String},
+   Registered: {type:String}
 });
 
 module.exports = mongoose.model("BloodBank",BloodBankSchema);

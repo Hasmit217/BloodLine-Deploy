@@ -24,8 +24,17 @@ const BloodCampRoute = require("./routes/bloodCamps");
 
 const ShowBloodBanksDirRoute = require("./routes/showBBdir");
 const ShowCitiesRoute = require("./routes/showCities");
+const ShowCampsRoute = require("./routes/showCamps");
+const RegisterBanksRoute = require("./routes/registerBank");
+const RegisterDonorsRoute = require("./routes/donor");
 //===========================================================
-mongoose.connect("mongodb+srv://ekanshlohiya98:Bloodline%40she98@cluster0.9k4kzet.mongodb.net/bloodlineDB");
+mongoose.connect("mongodb+srv://ekanshlohiya98:Bloodline%40she98@cluster0.9k4kzet.mongodb.net/bloodlineDB",{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+"mongodb+srv://cluster0.9k4kzet.mongodb.net/bloodlineDB"
+
+// BloodBank.updateMany({registered:'false'});
 
 app.use("/a",BloodReqRoute);
 app.use("/b",BloodBankRoute);
@@ -33,7 +42,9 @@ app.use("/c",ShowBloodBanksRoute);
 app.use("/d",BloodCampRoute);
 app.use("/e",ShowBloodBanksDirRoute);
 app.use("/f",ShowCitiesRoute);
-
+app.use("/g",ShowCampsRoute);
+app.use("/h",RegisterBanksRoute);
+app.use("/i",RegisterDonorsRoute);
 app.listen(8080, function() {
     console.log("Server started on port 8080");
   });

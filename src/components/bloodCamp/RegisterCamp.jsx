@@ -4,7 +4,7 @@ import axios from "axios";
 
 function RegisterCamp() {
 
-    const[bloodBank,setBloodBank] = useState([]);
+    const [bloodBank, setBloodBank] = useState([]);
 
     const [user, setUser] = useState({
         name: "",
@@ -12,8 +12,8 @@ function RegisterCamp() {
         orgType: "",
         orgEmail: "",
         participant: "",
-        campDate: "",
-        campTime: "",
+        date: "",
+        time: "",
         address: "",
         state: "",
         district: "",
@@ -27,24 +27,6 @@ function RegisterCamp() {
         remark: ""
     });
 
-    const passDistrict = async (e) => {
-        e.preventDefault();
-        try {
-            // console.log(user.district);
-            const res = await axios.post("http://localhost:8080/c/showBloodBanks", { chosenDistrict: user.district })
-                .then(response => {
-                    setBloodBank(response.data);
-                    console.log(response.data);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
-        catch (e) {
-            console.log(e);
-        }
-    }
-
     const handleInput = (e) => {
         e.preventDefault();
 
@@ -53,24 +35,37 @@ function RegisterCamp() {
         setUser({ ...user, [name]: value })
     }
 
-
-    const handleCityInput = (e) => {
-        handleInput(e);
-        passDistrict(e);
-    }
+    const isAnyFieldEmpty = (e) => {
+        for (const key in user) {
+            if (user[key].trim() === '') {
+                return true;
+            }
+        }
+        return false;
+    };
 
     const handleClick = (e) => {
         e.preventDefault();
 
         console.log(user);
 
-        axios.post('http://localhost:8080/d/registerCamp', user)
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        var isEmpty = isAnyFieldEmpty();
+
+        if (!isEmpty) {
+            axios.post('http://localhost:8080/d/registerCamp', user)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+            alert('Form submitted successfully!');
+            window.location.reload();
+        }
+        else{
+            alert("Please Fill out the required Field!");
+        }
     }
 
 
@@ -109,12 +104,12 @@ function RegisterCamp() {
                         <div className="br-sub-container-field">
                             <label for="date">Camp Schedule Date<span class="required-field"></span></label>
                             <br></br>
-                            <input type="date" placeholder="Select Date" name="campDate" value={user.campDate} onChange={handleInput} required></input>
+                            <input type="date" placeholder="Select Date" name="date" value={user.date} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="time">Camp Schedule Time<span class="required-field"></span></label>
                             <br></br>
-                            <input type="time" placeholder="Select Date" name="campTime" value={user.campTime} onChange={handleInput} required></input>
+                            <input type="time" placeholder="Select Date" name="time" value={user.time} onChange={handleInput} required></input>
                         </div>
                     </div>
 
@@ -149,7 +144,7 @@ function RegisterCamp() {
                         <div className="br-sub-container-field">
                             <label for="city">City<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name="city" value={user.city} onChange={handleCityInput} required></input>
+                            <input type="text" name="city" value={user.city} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="bldBank">Blood Bank<span class="required-field"></span></label>

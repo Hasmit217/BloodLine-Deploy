@@ -31,6 +31,7 @@ router.post("/bloodBanks",async(req,res) => {
         DateofRenewal: req.body.DateofRenewal,
         Latitude: req.body.Latitude,
         Longitude: req.body.Longitude,
+        Registered: req.body.Registered
     });
     try {
         const savedUser = await bloodBank.save();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import options from "../bloodCamp/option";
-import Table from "../layout/Table";
+import BloodBankTable from "../layout/Table";
 import axios from "axios";
 
 const headBloodbank = [
@@ -18,10 +18,10 @@ function BloodBankDir() {
         city: ""
     });
 
+    const [showPopUp, setPopUp] = useState(false);
     const [showTable, setShowTable] = useState(false);
     const [showCity, setShowCity] = useState(false);
     const [showFilter, setShowFilter] = useState(true);
-    const [showPopUp, setPopUp] = useState(false);
 
     const handleShowCity = (e) => {
         e.preventDefault();
@@ -149,7 +149,7 @@ function BloodBankDir() {
                 {showTable && (
                     <div className="bloodBankTable">
                         <h1 style={{ color: "#b11717" }}>Search Result</h1>
-                        <Table data={bldBankDir} headingData={headBloodbank} />
+                        <BloodBankTable data={bldBankDir} headingData={headBloodbank} />
                     </div>
                 )}
             </div>
@@ -164,9 +164,6 @@ function BloodBankDir() {
                 )}
             </div>
         </div>
-
-
-
     )
 }
 

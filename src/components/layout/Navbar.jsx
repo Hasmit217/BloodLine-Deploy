@@ -35,10 +35,10 @@ function navbar() {
                     <div className="navbar-func"> <a href="#">Dashboard</a>
                         <div className="dropdown-content">
                             <li>
-                                <Link to="/DonorDash">Home</Link>
+                                <Link to="/">Home</Link>
                                 <Link to="/AboutUs">About</Link>
                                 <Link to="/camp">Contact Us</Link>
-                                <Link to="/">Notification/News</Link>
+                                <Link to="/news">Notification/News</Link>
                             </li>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ function navbar() {
                             <li>
                                 <Link to="/DonorLogin">Donor login</Link>
                                 <Link to="/campSchedule">Search Blood donation camps</Link>
-                                <Link to="">Register as Volunteer</Link>
+                                <Link to="/RegistrationVolDonor">Register as Volunteer</Link>
                                 <Link to="">About Blood donation</Link>
                             </li>
                         </div>
@@ -57,21 +57,21 @@ function navbar() {
                             <li>
                                 <Link to="/bloodAvailSearch">Blood availiblity</Link>
                                 <Link to="/BloodBankDir">Blood bank Directory</Link>
-                                <Link to="">Contact volunteer donors</Link>
+                                <Link to="/donorDirectory">Contact volunteer donors</Link>
                                 <Link to="/requestBloodForm">Make Blood Request</Link>
                             </li>
                         </div>
                     </div>
-                    <div className="navbar-func"> <a href="#">Blood Bank Login</a>
+                    <div className="navbar-func"> <a href="#">Blood Bank</a>
                         <div className="dropdown-content">
                             <li>
                                 {/* <Link to="">{<LoginButton/>}</Link> */}
-                                <Link to="/BloodBankLogin">Blood Bank Login</Link>
-                                <Link to="/registerBloodBank">Register Blood bank</Link>
+                                <Link to="/BloodBankLogin">Login/Register</Link>
+                                {/* <Link to="/registerBloodBank">Register Blood bank</Link> */}
                             </li>
                         </div>
                     </div>
-                    <div className="navbar-func"> <a href="#">Host blood camp</a>
+                    <div className="navbar-func"> <a href="#">Blood Camp</a>
                         <div className="dropdown-content">
                             <li>
                                 <Link to="/RegisterCamp">Register Blood Camp</Link>

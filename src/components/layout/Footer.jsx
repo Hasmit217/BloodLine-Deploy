@@ -26,8 +26,8 @@ function footer() {
                     <div className="footer-col">
                         <h3>Blood Bank Login</h3>
                         <ul>
-                            <li><Link to="">Add your Blood Bank</Link></li>
-                            <li><Link to="">Blood Bank login</Link></li>
+                            <li><Link to="/registerBloodBank">Add your Blood Bank</Link></li>
+                            <li><Link to="/BloodBankLogin">Blood Bank login</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
@@ -41,7 +41,7 @@ function footer() {
                     </div>
                 </div>
                 <div className="footer-row">
-                    <p>© 2023 by Ministry of Health and Family Welfare.</p>
+                    <p>© 2023 Bloodline inc.</p>
                 </div>
                 <div className="footer-row">
                 <p><Link to="">Terms & Condition</Link>|<Link to="">Privacy Policy</Link>| Last Updates:24 March 2023 </p>

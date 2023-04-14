@@ -138,7 +138,7 @@ a {
 }
 
 a:hover {
-  color: #020202;
+  color: #4f4d4d;
   transform: translateY(0.5px);
   transition: all 0.1s ease-in-out 0.1s;
 }
@@ -752,7 +752,7 @@ th {
 }
 
 .bblwhite-container {
- 
+
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   background-color: white;
@@ -761,9 +761,10 @@ th {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
+  width: 100%;
 }
-.bblwhite-container button{
+
+.bblwhite-container button {
   margin: 10px;
   width: 54%;
   height: 46px;
@@ -775,12 +776,135 @@ th {
 
 /* RegisterBloodBank CSS************* */
 
-.regBldBankContainer{
+.regBldBankContainer {
   margin-top: 120px;
 }
 
 /* BLoodBankDashBoard CSS************************* */
 
-.bldDash-container{
+.bldDash-container {
   margin-top: 120px;
+}
+
+.logOut-container {
+  padding: 20px;
+  margin-top: 20px;
+  /* margin: auto; */
+  display: flex;
+  width: 100%;
+}
+
+.logOut-container button {
+  margin: 48px;
+  width: 100%;
+}
+
+.bankTopDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 190px;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #eeeded;
+  margin-top: -99px;
+}
+
+.DonorHeadDiv {
+  padding: 20px;
+  margin-top: -22px;
+  margin-left: 114px
+}
+
+/* News CSS******************************************* */
+
+.newsContainer {
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #fbefef;
+  border: 1px solid #ffdfdf;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin-top: 35px;
+  margin-bottom: 50px;
+  margin-right: 70px;
+  margin-left: 70px;
+}
+
+.newsSection {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  line-height: 1.5;
+  color: #3e3d3d;
+}
+
+.newsSection:last-child {
+  border-bottom: none;
+}
+
+.newsSection:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.newsSection:active {
+  background-color: #f1cfcf;
+}
+
+.newsSection:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.newsHead {
+  margin: auto;
+}
+
+/* Volunteer Donor CSS */
+.vd-container {
+  display: flex;
+  box-sizing: border-box;
+  margin: 32px;
+  margin-top: 10%;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: center;
+}
+
+.vd-heading {}
+
+.vd-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid #d2cfcf;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 41%;
+  color: #4d4c4c;
+  margin-left: 405px;
+}
+
+.vd-sub-container {
+  margin: 20px;
+  padding: 20px;
+  justify-content: first baseline;
+  /* border-left: 1px dotted #b5b5b5; */
+  /* border-right: 1px dotted #b5b5b5; */
+  width: 100%;
+  align-self: center; 
+}
+
+.vd-sub-container-field {
+  display: block;
+  justify-content: top;
+  margin: 10px;
+}
+
+.vd-form-submit{
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
 }
