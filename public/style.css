@@ -5,6 +5,7 @@ body {
 
 .HomeCarddiv {
   text-align: center;
+  animation: fadein 1.2s;
 }
 
 
@@ -53,6 +54,7 @@ body {
   margin-left: 120px;
   margin-right: 120px;
   margin-bottom: 90px;
+  animation: fadein 1.2s;
 }
 
 
@@ -85,6 +87,7 @@ h2 {
 
 .HomeInfodiv {
   text-align: center;
+  animation: fadein 1.2s;
 }
 
 /* Footer Css ****************************************/
@@ -225,6 +228,7 @@ ul {
 
 .camp-container {
   box-sizing: border-box;
+  animation: fadein 1.2s;
   /* width: 100%; */
   /* height: 20px; */
   /* margin-bottom: 50px; */
@@ -350,6 +354,7 @@ ul {
   box-sizing: border-box;
   margin: 32px;
   margin-top: 10%;
+  animation: fadein 1.2s;
 }
 
 .br-heading h1 {
@@ -452,6 +457,7 @@ option {
 
 .DonorDashboard {
   margin-top: 150px;
+  animation: fadein 1.2s;
 }
 
 .DonorDashboardUl {
@@ -520,6 +526,7 @@ option {
   margin-left: 190px;
   /* margin-bottom: -50px; */
   margin-top: 30px;
+  animation: fadein 1.2s;
 }
 
 .DonorHomeh2 {
@@ -605,6 +612,7 @@ img{
 .about-container {
   margin: auto;
   margin-top: 120px;
+  animation: fadein 1.2s;
 }
 
 /* Register Camp CSS ***********************************/
@@ -634,6 +642,7 @@ img{
   border-radius: 5px;
   border: 2px solid rgb(230 230 230);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: fadein 1.2s;
 
 }
 
@@ -643,15 +652,22 @@ table {
   /* width: 100%; */
   /* border: 1px solid red; */
 }
-
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 tr {
   background-color: #f5e9e9;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 td {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 
@@ -668,6 +684,7 @@ th {
 .container {
   margin: auto;
   margin-top: 110px;
+  animation: fadein 1.2s;
 }
 
 /* User Login CSS******************* */
@@ -721,6 +738,7 @@ th {
   margin-top: 110px;
   margin-right: -8px;
   display: flex;
+  animation: fadein 1.2s;
 }
 
 .bldCell-img {
@@ -817,7 +835,9 @@ th {
 }
 
 /* News CSS******************************************* */
-
+.mainNewscontainer{
+  animation: fadein 1.2s;
+}
 .newsContainer {
   height: 300px;
   overflow-y: scroll;
@@ -869,6 +889,7 @@ th {
   flex-direction: column;
   /* align-items: flex-start; */
   justify-content: center;
+  animation: fadein 1.2s;
 }
 
 .vd-heading {}

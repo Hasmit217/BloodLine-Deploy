@@ -2,7 +2,7 @@ import React from "react"
 
 function News() {
     return (
-        <div style={{'margin-top':'120px'}}>
+        <div className="mainNewscontainer" style={{'margin-top':'120px'}}>
             <div className="newsHead"><h1 style={{ color: '#b11717' }}>News Section</h1></div>
             <div className="newsContainer">
 

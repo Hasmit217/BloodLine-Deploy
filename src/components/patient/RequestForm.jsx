@@ -1,15 +1,15 @@
-import React,{useState}from "react";
-import options,{bloodgroup} from "../bloodCamp/option";
-import {useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import options, { bloodgroup } from "../bloodCamp/option";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function RequestBlood() {
-    
-    const [state, setState] = useState("");
-    const [districts, setDistrict] = useState(""); 
-    const [blood,setBlood] = useState("");
 
-    const [user,setUser] = useState({
+    const [state, setState] = useState("");
+    const [districts, setDistrict] = useState("");
+    const [blood, setBlood] = useState("");
+
+    const [user, setUser] = useState({
         name: "",
         age: "",
         gender: "",
@@ -34,41 +34,61 @@ function RequestBlood() {
     const handleDistrict = (e) => {
         const value = e.target.value;
         setDistrict(value);
-    } 
+    }
     const handleBlood = (e) => {
         const value = e.target.value;
         setBlood(value);
-    }   
-    const handleInput = (e) =>{
+    }
+    const handleInput = (e) => {
         let value = e.target.value;
         let name = e.target.name;
-        setUser({...user,[name]:value})
+        setUser({ ...user, [name]: value })
     }
-    const handleBloodInput = (e) =>{
+    const handleBloodInput = (e) => {
         handleBlood(e);
         handleInput(e);
     }
-    const handleStateInput = (e) =>{
+    const handleStateInput = (e) => {
         handleState(e);
         handleInput(e);
     }
-    const handleDistrictInput = (e) =>{
+    const handleDistrictInput = (e) => {
         handleDistrict(e);
         handleInput(e);
     }
 
+    const isAnyFieldEmpty = (e) => {
+        for (const key in user) {
+            if (user[key].trim() === '') {
+                return true;
+            }
+        }
+        return false;
+    };
+
     const handleClick = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         console.log(user);
-        
-        axios.post('http://localhost:8080/bloodReq',user)
-        .then(response => {
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.error(error);
-        });
+
+        var isEmpty = isAnyFieldEmpty();
+
+        if (!isEmpty) {
+            axios.post('http://localhost:8080/a/bloodReq', user)
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+            alert('Form submitted successfully!');
+            window.location.reload();
+        }
+        else {
+            alert("Please Fill out the required Field!");
+        }
+
     }
 
     return (
@@ -81,12 +101,12 @@ function RequestBlood() {
                         <div className="br-sub-container-field">
                             <label for="name">Name<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name = "name" value={user.name} onChange={handleInput} required></input>
+                            <input type="text" name="name" value={user.name} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="age">Age<span class="required-field"></span></label>
                             <br></br>
-                            <input type="number" name="age" value={user.age} onChange={handleInput}required></input>
+                            <input type="number" name="age" value={user.age} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="gender">Gender<span class="required-field"></span></label>
@@ -125,7 +145,7 @@ function RequestBlood() {
                         <div className="br-sub-container-field">
                             <label for="contactNum">Contact Number<span class="required-field"></span></label>
                             <br></br>
-                            <input type="number" name="contactNum" value={user.contactNum} onChange={handleInput}required></input>
+                            <input type="number" name="contactNum" value={user.contactNum} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="email">Email</label>
@@ -138,17 +158,17 @@ function RequestBlood() {
                         <div className="br-sub-container-field">
                             <label for="address">Address<span class="required-field"></span></label>
                             <br></br>
-                            <textarea name="address"  value={user.address} onChange={handleInput} required></textarea>
+                            <textarea name="address" value={user.address} onChange={handleInput} required></textarea>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="treatment">Treatment for?<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name="treatment"  value={user.treatment} onChange={handleInput} required></input>
+                            <input type="text" name="treatment" value={user.treatment} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="remark">Remarks</label>
                             <br></br>
-                            <input type="text"  value={user.remark} onChange={handleInput} name="remark"></input>
+                            <input type="text" value={user.remark} onChange={handleInput} name="remark"></input>
                         </div>
                     </div>
                     <div className="br-sub-container">
@@ -156,7 +176,7 @@ function RequestBlood() {
                         <div className="br-sub-container-field">
                             <label for="state">State<span class="required-field"></span></label>
                             <br></br>
-                            <select name="state" onChange={handleStateInput} value={user.state}  required>
+                            <select name="state" onChange={handleStateInput} value={user.state} required>
                                 <option value="" selected disabled>Select State</option>
                                 {options.map((item) => {
                                     return <option value={item.label}>{item.label}</option>
@@ -182,12 +202,12 @@ function RequestBlood() {
                         <div className="br-sub-container-field">
                             <label for="city">City<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name="city" value={user.city} onChange={handleInput}  required></input>
+                            <input type="text" name="city" value={user.city} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
                             <label for="hospital">Hospital<span class="required-field"></span></label>
                             <br></br>
-                            <input type="text" name="hospital" value={user.hospital} onChange={handleInput}  required></input>
+                            <input type="text" name="hospital" value={user.hospital} onChange={handleInput} required></input>
                         </div>
                     </div>
                 </div>

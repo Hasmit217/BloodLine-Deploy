@@ -29,7 +29,7 @@ function BloodBankLogin() {
                         {/* <button><Link style={{color:"white"}}to="/registerBloodBank">Register New BloodBank</Link></button> */}
 
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     )

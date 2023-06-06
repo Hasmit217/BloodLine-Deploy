@@ -19,14 +19,14 @@ const LogoutButton = () => {
                 });
         }
     }, [isAuthenticated, user, bankRegistered]);
-
+ 
     return (
         isAuthenticated && (
             <div className="logOut-container">
                 <p><h1>Welcome</h1> <h2 style={{}}>{user && user.name}</h2></p>
-                <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                {/* <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                     Log Out
-                </button>
+                </button> */}
             </div>
         )
     );
@@ -41,8 +41,8 @@ function BldBankDash() {
             </div>
             <div className="DonorMainDiv">
                 <ul className="DonorDashboardUl">
-                    <li className="DonorDashboardLi"><Link to="/">Home</Link></li>
-                    <li className="DonorDashboardLi"><Link to="/">View/Update Profile</Link></li>
+                    <li className="DonorDashboardLi"><Link to="/bloodBankDash">Home</Link></li>
+                    <li className="DonorDashboardLi"><Link to="/registerBloodBank">View/Update Profile</Link></li>
                 </ul>
             </div>
 

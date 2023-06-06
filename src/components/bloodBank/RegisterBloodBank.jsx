@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import options from "../bloodCamp/option";
 
@@ -74,7 +75,7 @@ function RegisterBloodBank() {
 
     return (
         <div className="br-container">
-            <div className="br-heading"><h1>Register BloodBank</h1></div>
+            <div className="br-heading"><h1>BloodBank Details</h1></div>
             <form method="POST">
                 <div className="rc-form">
                     <div className="br-sub-container">

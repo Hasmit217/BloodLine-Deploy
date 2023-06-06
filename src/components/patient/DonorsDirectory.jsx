@@ -1,13 +1,20 @@
 import React,{useState} from "react";
 import options,{bloodgroup} from "../bloodCamp/option";
 import axios from "axios";
+import { DonorTable } from "../layout/Table";
+
+
+const headDonor = [
+    { name: "Name", age: "Age", gender:"Gender", district: "District", city: "City", address: "Address", contactno : "Contact Number"}
+]
 
 function DonorsDir(){
+    
 
     const [user, setUser] = useState({
         state: "",
         district: "",
-        blgGrp: ""
+        bldGrp: ""
     });
 
     const [donorDir, setDonorDir] = useState([]);
@@ -19,7 +26,10 @@ function DonorsDir(){
 
         let value = e.target.value;
         let name = e.target.name;
-        if (name === "state") {
+        if (name === "bldGrp") {
+            setUser({ ...user, [name]: value,state:"", district: ""}); // Reset district to "Select District"
+        }
+        else if(name==="state"){
             setUser({ ...user, [name]: value, district: ""}); // Reset district to "Select District"
         }
         else setUser({ ...user, [name]: value });
@@ -27,22 +37,22 @@ function DonorsDir(){
 
     const handleSearchClick = () => {
         console.log("hello");
-    //     axios.post('http://localhost:8080', user)
-    //         .then(response => {
-    //             setDonorDir(response.data);
-    //             if (response.data.length === 0) {
-    //                 setPopUp(true);
-    //                 setShowTable(false);
-    //             }
-    //             else {
-    //                 setShowTable(true);
-    //                 setPopUp(false);
-    //             }
-    //             console.log(response.data);
-    //         })
-    //         .catch(error => {
-    //             console.error(error);
-    //         });
+        axios.post('http://localhost:8080/j/showDonors', user)
+            .then(response => {
+                setDonorDir(response.data);
+                if (response.data.length === 0) {
+                    setPopUp(true);
+                    setShowTable(false);
+                }
+                else {
+                    setShowTable(true);
+                    setPopUp(false);
+                }
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
 
     }
 
@@ -54,7 +64,7 @@ function DonorsDir(){
                 <form action="" className="camp-search-form">
                     <div className="camp-subFields">
                         <label htmlFor="state">Blood Group<span class="required-field"></span></label>
-                        <select name="blgGrp" value={user.bldGrp} onChange={(e) => {
+                        <select name="bldGrp" value={user.bldGrp} onChange={(e) => {
                             handleInput(e);
                         }} required>
                             <option value="" selected disabled>Select Blood Group</option>
@@ -96,24 +106,24 @@ function DonorsDir(){
                     <button type="button" onClick={handleSearchClick}>Search</button>
                 </div>
             </div>
-            {/* <div>
+            <div>
                 {showTable && (
                     <div className="bloodBankTable">
                         <h1 style={{ color: "#b11717" }}>Search Result</h1>
-                        <BloodBankTable data={bldBankDir} headingData={headBloodbank} />
+                        <DonorTable data={donorDir} headingData={headDonor} />
                     </div>
                 )}
             </div>
             <div>
                 {showPopUp && (
                     <div className="popUp-container popUp-background">
-                        <h3>No Blood banks Available</h3>
+                        <h3>No Donors Available</h3>
                         <button style={{width:"100%",border:"2px solid #d5d2d2"}} onClick={(e) => {
                             setPopUp(false);
                         }} >Cancel</button>
                     </div>
                 )}
-            </div> */}
+            </div>
         </div>
     )
 }
