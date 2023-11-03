@@ -73,8 +73,3 @@ function App() {
 }
 
 export default App;
-
-//2 20  20
-//2 50  49
-//3 15  72
-

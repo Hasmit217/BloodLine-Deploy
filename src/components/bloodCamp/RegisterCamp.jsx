@@ -5,6 +5,7 @@ import axios from "axios";
 function RegisterCamp() {
 
     const [bloodBank, setBloodBank] = useState([]);
+    const [banksFound, setBanksFound] = useState(false);
 
     const [user, setUser] = useState({
         name: "",
@@ -32,7 +33,12 @@ function RegisterCamp() {
 
         let value = e.target.value;
         let name = e.target.name;
-        setUser({ ...user, [name]: value })
+
+        if(name == 'district' || name == 'state'){
+            setBanksFound(false);
+            setUser({ ...user, [name]: value })
+        }
+        else setUser({ ...user, [name]: value })
     }
 
     const isAnyFieldEmpty = (e) => {
@@ -43,6 +49,32 @@ function RegisterCamp() {
         }
         return false;
     };
+
+
+    // -------------------------------------------------------------------------------
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+
+        console.log("Searching BloodBanks");
+
+        axios.post('http://localhost:8080/l/showBanksAsDistrict', user)
+            .then(response => {
+                if (response.data != 0) {
+                    console.log(response.data);
+                    setBanksFound(true);
+                    setBloodBank(response.data);
+                }
+                else alert('Oops!! No Blood Bank found in this region');
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+
+    }
+
+    // --------------------------------------------------------------------------------
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -63,7 +95,7 @@ function RegisterCamp() {
             alert('Form submitted successfully!');
             window.location.reload();
         }
-        else{
+        else {
             alert("Please Fill out the required Field!");
         }
     }
@@ -146,7 +178,17 @@ function RegisterCamp() {
                             <br></br>
                             <input type="text" name="city" value={user.city} onChange={handleInput} required></input>
                         </div>
-                        <div className="br-sub-container-field">
+
+                        {banksFound == false && (<div className="br-sub-container-field">
+                            <label for="bldBank">Blood Bank<span class="required-field"></span></label>
+                            <br></br>
+
+                            <div className="br-form-bloodbank-search">
+                                <button style={{ width: "100%", border: "2px solid #d5d2d2" }} type="search" onClick={handleSearch}>Search BloodBanks</button>
+                            </div>
+                        </div>)}
+
+                        {banksFound && (<div className="br-sub-container-field">
                             <label for="bldBank">Blood Bank<span class="required-field"></span></label>
                             <br></br>
                             <select name="bldBank" onChange={handleInput} value={user.bldBank} required>
@@ -156,8 +198,8 @@ function RegisterCamp() {
                                     {/* console.log(item.label); */ }
                                 })}
                             </select>
-                            {/* <input type="text" name="bldBank" value={user.bldBank} onChange={handleInput} required></input> */}
-                        </div>
+                        </div>)}
+
                         <div className="br-sub-container-field">
                             <label for="campLat">Latitude<span class="required-field"></span></label>
                             <br></br>

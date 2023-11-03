@@ -29,6 +29,8 @@ const RegisterBanksRoute = require("./routes/registerBank");
 const RegisterDonorsRoute = require("./routes/donor");
 const ShowDonorsRoute = require("./routes/showDonor");
 const ShowBloodAvailRoute = require("./routes/bloodAvailability");
+const ShowBanksAsDistrict = require("./routes/searchBanksAsDistrict");
+
 //===========================================================
 mongoose.connect("mongodb+srv://ekanshlohiya98:Bloodline%40she98@cluster0.9k4kzet.mongodb.net/bloodlineDB",{
   useNewUrlParser: true,
@@ -49,6 +51,8 @@ app.use("/h",RegisterBanksRoute);
 app.use("/i",RegisterDonorsRoute);
 app.use("/j",ShowDonorsRoute);
 app.use("/k",ShowBloodAvailRoute);
+app.use("/l",ShowBanksAsDistrict);
+
 app.listen(8080, function() {
     console.log("Server started on port 8080");
   });
