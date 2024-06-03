@@ -1,5 +1,4 @@
 import React from "react";
-import DonorDashboard from "./DonorDashboard";
 
 function DonorHome(){
     return (

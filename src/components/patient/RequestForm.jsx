@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import options, { bloodgroup } from "../bloodCamp/option";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function RequestBlood() {

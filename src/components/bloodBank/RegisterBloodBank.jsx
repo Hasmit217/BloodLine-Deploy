@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
 import options from "../bloodCamp/option";
 
-import { useDispatch, useSelector } from "react-redux";
-import { updateAccountDet } from "../redux/slices/bbAccount";
+import { useSelector } from "react-redux";
 
 function RegisterBloodBank() {
 
-    const dispatch = useDispatch();
     const updateDel = useSelector((state) => state.bbAccountDet);
 
 

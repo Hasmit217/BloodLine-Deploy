@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import options, { bloodgroup } from "../bloodCamp/option";
+import options from "../bloodCamp/option";
 import { BloodTable } from "../layout/Table";
 import axios from "axios";
 

@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import firebase from './firebase';
 import { useNavigate } from 'react-router-dom';
@@ -94,17 +92,3 @@ function App() {
 }
 
 export default App;
-{/* <div className="User-login-container">
-                  <h1 style={{ color: "#b11717" }}>Login Form</h1>
-                  <div className='login-form'>
-                    <form onSubmit={this.onSignInSubmit}>
-                      <div id="sign-in-button"></div>
-                      <input className="loginForm-input" type="number" name="mobile" placeholder="Mobile number" required onChange={this.handleChange} />
-                      <button type="submit">Get OTP</button>
-                    </form>
-                    <form onSubmit={this.onSubmitOTP}>
-                      <input className="loginForm-input" type="number" name="otp" placeholder="OTP Number" required onChange={this.handleChange} />
-                      <button onClick={this.onSubmitOTP} type="submit">Login</button>
-                    </form>
-                  </div>
-                </div> */}

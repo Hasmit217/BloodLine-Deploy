@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import RegisterBloodBank from "./RegisterBloodBank";
 import BBProfile from "./BBProfile";
 import BBGuildlines from "./BBGuildlines";
-import BldRequest from "./ShowBloodReq";
 
 import { useDispatch, useSelector } from "react-redux";
-import { boolCnt0, boolCnt1, boolCnt2, boolCnt3 } from "../redux/slices/boolCounter";
+import { boolCnt1, boolCnt2, boolCnt3 } from "../redux/slices/boolCounter";
 import { updateImageUrl } from "../redux/slices/bbProfilePic";
 import { updateAccountDet } from "../redux/slices/bbAccount";
 
 const BBDashContainer = () => {
     const { logout, isAuthenticated, user } = useAuth0();
-    const [bankRegistered, setBankRegistered] = useState(true);
 
     const boolValue = useSelector((state) => state.boolCnt);
 
     const dispatch = useDispatch();
-    const updateDel = useSelector((state) => state.bbAccountDet);
 
     if (isAuthenticated && user) {
         dispatch(
@@ -38,7 +34,6 @@ const BBDashContainer = () => {
                         alert("Please Register your BloodBank to view Profile!!")
                     }
                     else {
-                        // console.log(response.data);
                         const responseData = response.data[0];
                         console.log(response.data[0]);
                         dispatch(
@@ -66,11 +61,9 @@ const BBDashContainer = () => {
                                 profImg: responseData.BloodBankImage,
                             })
                         );
-                        // console.log(updateDel.email);
                         dispatch(boolCnt1());
                         dispatch(updateImageUrl(user.picture));
                     }
-                    // console.log(response.data);
                 })
                 .catch(error => {
                     console.error(error);
@@ -90,7 +83,6 @@ const BBDashContainer = () => {
                         dispatch(updateImageUrl(user.picture));
                         alert("Already registered :)");
                     }
-                    // console.log(response.data);
                 })
                 .catch(error => {
                     console.error(error);
