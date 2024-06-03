@@ -91,7 +91,7 @@ const BCTRow = (props) => {
         <td>{perName}</td>
         <td>{perCont}</td>
         {/* <td><button style={{ width: '100%', fontSize: '13.5px' }}>Register as Volunteer</button></td> */}
-        <td><Link to="/DonorLogin" style={{ color: 'red', fontSize: '20px' }}>Register as Volunteer</Link></td>
+        <td><Link to="/RegistrationVolDonor" style={{ color: 'red', fontSize: '20px' }}>Register as Volunteer</Link></td>
     </tr>)
 }
 const BloodCampTable = (props) => {

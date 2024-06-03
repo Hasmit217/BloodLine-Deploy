@@ -148,7 +148,7 @@ function RequestBlood() {
                             <input type="number" name="contactNum" value={user.contactNum} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
-                            <label for="email">Email</label>
+                            <label for="email">Email<span class="required-field"></span></label>
                             <br></br>
                             <input type="text" value={user.email} onChange={handleInput} name="email"></input>
                         </div>
@@ -166,7 +166,7 @@ function RequestBlood() {
                             <input type="text" name="treatment" value={user.treatment} onChange={handleInput} required></input>
                         </div>
                         <div className="br-sub-container-field">
-                            <label for="remark">Remarks</label>
+                            <label for="remark">Remarks<span class="required-field"></span></label>
                             <br></br>
                             <input type="text" value={user.remark} onChange={handleInput} name="remark"></input>
                         </div>

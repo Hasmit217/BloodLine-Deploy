@@ -14,12 +14,14 @@ import { sliderItems } from "./bloodCamp/option";
 import RegisterCamp from "./bloodCamp/RegisterCamp";
 import { Auth0Provider } from "@auth0/auth0-react";
 import UserLogin from "./donor/DonorLogin";
-import BloodBankLogin from "./bloodBank/BloodBankLogin";
-import RegisterBloodBank from "./bloodBank/RegisterBloodBank";
-import BldBankDash from "./bloodBank/BloodBankDashBoard";
 import News from "./news/News";
 import DonorDir from "./patient/DonorsDirectory";
-import RegVolDonor from "./donor/RegVolunteerDonor"
+import RegVolDonor from "./donor/RegVolunteerDonor";
+import BloodBankLogin from "./bloodBank/BloodBankLogin";
+import BldBankDash from "./bloodBank/BloodBankDashBoard";
+import RegisterBloodBank from "./bloodBank/RegisterBloodBank";
+import BBProfile from "./bloodBank/BBProfile";
+import ViewBldRequest from "./bloodBank/ShowBloodReq";
 
 import {
     BrowserRouter as Router,
@@ -63,6 +65,8 @@ function App() {
                         <Route path="/donorDirectory" element={<DonorDir/>}/>
                         <Route path="/news" element=<News/>/>
                         <Route path="/RegistrationVolDonor" element=<RegVolDonor/>/>
+                        <Route path="/BBProfile" element=<BBProfile/>/>
+                        <Route path="/ViewBldRequests" element=<ViewBldRequest/>/>
                     </Routes>
 
                     <Footer></Footer>

@@ -75,7 +75,7 @@ function DonorsDir(){
 
                     </div>
                     <div className="camp-subFields">
-                        <label htmlFor="state">State<span class="required-field"></span></label>
+                        <label htmlFor="state">State<span class=""></span></label>
                      
                         <select name="state" value={user.state} onChange={(e) => {
                             handleInput(e);

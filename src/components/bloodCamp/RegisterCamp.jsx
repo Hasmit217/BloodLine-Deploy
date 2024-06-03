@@ -184,7 +184,7 @@ function RegisterCamp() {
                             <br></br>
 
                             <div className="br-form-bloodbank-search">
-                                <button style={{ width: "100%", border: "2px solid #d5d2d2" }} type="search" onClick={handleSearch}>Search BloodBanks</button>
+                                <button style={{ width: "60%", "font-size" : "15px" ,color : "black", "background-color" : "#ebdddd" ,border : "solid #c2c0c0", "border-radius" : "5px"}} type="search" onClick={handleSearch}>Search BloodBanks</button>
                             </div>
                         </div>)}
 

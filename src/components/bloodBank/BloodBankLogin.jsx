@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 
-//
-
 const LoginButton = () => {
 
     const { loginWithRedirect,user, isAuthenticated } = useAuth0();
@@ -23,11 +21,7 @@ function BloodBankLogin() {
                 <h1 style={{color:"white"}}>Blood Bank Login</h1>
                 <div className="bbl-form">
                     <div className="bblwhite-container">
-                    
                         <LoginButton />
-                        {/* <LogoutButton/> */}
-                        {/* <button><Link style={{color:"white"}}to="/registerBloodBank">Register New BloodBank</Link></button> */}
-
                     </div>
                 </div> 
             </div>

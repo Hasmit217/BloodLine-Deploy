@@ -7,10 +7,10 @@ const BloodBankSchema = new mongoose.Schema({
    District: {type:String},
    City: {type:String},
    Address: {type:String},
-   Pincode: {type:String},
-   ContactNo: {type:String},
-   Mobile: {type:String},
-   Helpline:{type:String},
+   Pincode: {type:Number},
+   ContactNo: {type:Number},
+   Mobile: {type:Number},
+   Helpline:{type:Number},
    Fax: {type:String},
    Email: {type:String},
    Website: {type:String},
@@ -28,7 +28,14 @@ const BloodBankSchema = new mongoose.Schema({
    DateofRenewal: {type:String},
    Latitude: {type:String},
    Longitude: {type:String},
-   Registered: {type:String}
+   Registered: {type:String},
+   BloodBankImage: {
+      type: String,
+      // Assuming you want to store the path or URL to the image
+      // Adjust the required, minlength, and maxlength based on your needs
+      // minlength: 1,
+      // maxlength: 255,
+   }
 });
 
 module.exports = mongoose.model("BloodBank",BloodBankSchema);
