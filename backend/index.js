@@ -34,11 +34,29 @@ const findRegisteredBB = require("./routes/findRegisteredBB");
 const UploadBBImg = require("./routes/uploadImg");
 
 //===========================================================
-mongoose.connect("mongodb+srv://ekanshlohiya98:Bloodline%40she98@cluster0.9k4kzet.mongodb.net/bloodlineDB",{
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-"mongodb+srv://cluster0.9k4kzet.mongodb.net/bloodlineDB"
+
+const connectDB = async () => {
+  const DB_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.9k4kzet.mongodb.net/bloodlineDB`;
+  try {
+    await mongoose.connect(DB_URI,{useNewUrlParser : true});
+    console.log(`Mongo DB Connected`);
+  } catch (error) {
+    console.log('Error while Connecting with the database',error);
+    process.exit(1);
+  }
+}
+connectDB().then(() => {
+  const port = process.env.port || 8080;
+  app.listen(port, function () {
+    console.log("Server started sucessfully");
+  });
+})
+
+// mongoose.connect("mongodb+srv://ekanshlohiya98:Bloodline%40she98@cluster0.9k4kzet.mongodb.net/bloodlineDB",{
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
+// "mongodb+srv://cluster0.9k4kzet.mongodb.net/bloodlineDB"
 
 // BloodBank.updateMany({registered:'false'});
 
@@ -57,6 +75,6 @@ app.use("/l",ShowBanksAsDistrict);
 app.use("/m",findRegisteredBB);
 app.use("/n",UploadBBImg);
 
-app.listen(8080, function() {
-    console.log("Server started on port 8080");
-  });
+// app.listen(8080, function() {
+//     console.log("Server started on port 8080");
+//   });
