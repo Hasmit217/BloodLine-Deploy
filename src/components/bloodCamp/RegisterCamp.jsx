@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import options from "../bloodCamp/option";
 import axios from "axios";
+import { BASE_URL } from "../../services/helper";
 
 function RegisterCamp() {
 
@@ -58,7 +59,7 @@ function RegisterCamp() {
 
         console.log("Searching BloodBanks");
 
-        axios.post('http://localhost:8080/l/showBanksAsDistrict', user)
+        axios.post(BASE_URL+'l/showBanksAsDistrict', user)
             .then(response => {
                 if (response.data != 0) {
                     console.log(response.data);
@@ -84,7 +85,7 @@ function RegisterCamp() {
         var isEmpty = isAnyFieldEmpty();
 
         if (!isEmpty) {
-            axios.post('http://localhost:8080/d/registerCamp', user)
+            axios.post(BASE_URL+'d/registerCamp', user)
                 .then(response => {
                     console.log(response.data);
                 })

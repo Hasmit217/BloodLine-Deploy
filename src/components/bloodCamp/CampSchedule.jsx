@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import options from "./option";
 import {BloodCampTable} from "../layout/Table";
 import axios from "axios";
+import { BASE_URL } from "../../services/helper";
 
 //name  orgName  orgType  orgEmail date time  district city address perName perContact
 const headCampSchedule = [
@@ -35,7 +36,7 @@ function CampSchedule() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(user)
-        axios.post('http://localhost:8080/g/showCamps', user)
+        axios.post(BASE_URL+'g/showCamps', user)
             .then(response => {
                 setCampData(response.data);
                 if (response.data.length === 0) {

@@ -3,6 +3,7 @@ import axios from "axios";
 import options from "../bloodCamp/option";
 
 import { useSelector } from "react-redux";
+import { BASE_URL } from "../../services/helper";
 
 function RegisterBloodBank() {
 
@@ -58,7 +59,7 @@ function RegisterBloodBank() {
         var isEmpty = isAnyFieldEmpty();
 
         if (!isEmpty) {
-            axios.post('http://localhost:8080/h/registerBank', user)
+            axios.post(BASE_URL+'h/registerBank', user)
                 .then(response => {
                     console.log(response.data);
                 })

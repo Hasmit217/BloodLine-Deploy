@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import options from "../bloodCamp/option";
 import { BloodTable } from "../layout/Table";
 import axios from "axios";
+import { BASE_URL } from "../../services/helper";
 
 
 const headBloodAvail = [
@@ -34,7 +35,7 @@ function BloodAvail() {
 
     const handleSearchClick = () => {
         console.log("hello");
-        axios.post('http://localhost:8080/k/showBloodAvail', user)
+        axios.post(BASE_URL+'k/showBloodAvail', user)
             .then(response => {
                 setBloodAvail(response.data);
                 if (response.data.length === 0) {

@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { useDispatch, useSelector } from "react-redux";
 import { updateAccountDet } from "../redux/slices/bbAccount";
+import { BASE_URL } from "../../services/helper";
 
 
 const BBProfile = () => {
@@ -61,7 +62,7 @@ const BBProfile = () => {
         console.log(user);
 
 
-        axios.post('http://localhost:8080/h/updateBankDetails', user)
+        axios.post(BASE_URL+'h/updateBankDetails', user)
             .then(response => {
                 console.log(response.data);
             })
@@ -86,7 +87,7 @@ const BBProfile = () => {
         console.log(formData);
 
         // Send the formData to the server
-        axios.post("http://localhost:8080/n/uploadImg", formData, {
+        axios.post(BASE_URL+"n/uploadImg", formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },

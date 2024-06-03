@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import options from "../bloodCamp/option";
 import BloodBankTable from "../layout/Table";
 import axios from "axios";
+import { BASE_URL } from "../../services/helper";
 
 const headBloodbank = [
     { name: "Name", city: "City", address: "Address", phone: "Contact No", email: "Email Id", category: "Category", serviceTime: "Service Time" }
@@ -27,7 +28,7 @@ function BloodBankDir() {
         e.preventDefault();
 
         console.log(user);
-        axios.post('http://localhost:8080/f/showCities', user)
+        axios.post(BASE_URL+'f/showCities', user)
             .then(response => {
                 setCity(response.data);
                 console.log(response.data);
@@ -59,7 +60,7 @@ function BloodBankDir() {
     }
 
     const handleSearchClick = () => {
-        axios.post('http://localhost:8080/e/showBBdir', user)
+        axios.post(BASE_URL+'e/showBBdir', user)
             .then(response => {
                 setBldBankDir(response.data);
                 if (response.data.length === 0) {

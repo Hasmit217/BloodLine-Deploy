@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { boolCnt1, boolCnt2, boolCnt3 } from "../redux/slices/boolCounter";
 import { updateImageUrl } from "../redux/slices/bbProfilePic";
 import { updateAccountDet } from "../redux/slices/bbAccount";
+import { BASE_URL } from "../../services/helper";
 
 const BBDashContainer = () => {
     const { logout, isAuthenticated, user } = useAuth0();
@@ -28,7 +29,7 @@ const BBDashContainer = () => {
     const HandleProfile = (e) => {
     
         if (isAuthenticated && user) {
-            axios.post('http://localhost:8080/m/findRegisteredBB', { userid: user.email })
+            axios.post(BASE_URL+'m/findRegisteredBB', { userid: user.email })
                 .then(response => {
                     if (response.data.length === 0) {
                         alert("Please Register your BloodBank to view Profile!!")
@@ -73,7 +74,7 @@ const BBDashContainer = () => {
     
     const HandleRegister = (e) => {
         if (isAuthenticated && user) {
-            axios.post('http://localhost:8080/m/findRegisteredBB', { userid: user.email })
+            axios.post(BASE_URL+'m/findRegisteredBB', { userid: user.email })
                 .then(response => {
                     if (response.data.length === 0) {
                         dispatch(boolCnt2());
@@ -92,7 +93,7 @@ const BBDashContainer = () => {
 
     const HandleReq = (e) => {
         if (isAuthenticated && user) {
-            axios.post('http://localhost:8080/m/findRegisteredBB', { userid: user.email })
+            axios.post(BASE_URL+'m/findRegisteredBB', { userid: user.email })
                 .then(response => {
                     if (response.data.length === 0) {
                         alert("Please Register your BloodBank first to view the BloodRequest !!");

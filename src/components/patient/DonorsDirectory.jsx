@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import options,{bloodgroup} from "../bloodCamp/option";
 import axios from "axios";
 import { DonorTable } from "../layout/Table";
-
+import { BASE_URL } from "../../services/helper";
 
 const headDonor = [
     { name: "Name", age: "Age", gender:"Gender", district: "District", city: "City", address: "Address", contactno : "Contact Number"}
@@ -37,7 +37,7 @@ function DonorsDir(){
 
     const handleSearchClick = () => {
         console.log("hello");
-        axios.post('http://localhost:8080/j/showDonors', user)
+        axios.post(BASE_URL+'j/showDonors', user)
             .then(response => {
                 setDonorDir(response.data);
                 if (response.data.length === 0) {

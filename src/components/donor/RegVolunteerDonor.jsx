@@ -1,6 +1,7 @@
 import React ,{useState} from "react";
 import options ,{bloodgroup} from "../bloodCamp/option";
 import axios from "axios";
+import { BASE_URL } from "../../services/helper";
 
 function RegVolunteerDonor() {
 
@@ -45,7 +46,7 @@ function RegVolunteerDonor() {
         var isEmpty = isAnyFieldEmpty();
 
         if (!isEmpty) {
-            axios.post('http://localhost:8080/i/registerDonor', user)
+            axios.post(BASE_URL+'i/registerDonor', user)
                 .then(response => {
                     console.log(response.data);
                 })

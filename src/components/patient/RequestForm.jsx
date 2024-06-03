@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import options, { bloodgroup } from "../bloodCamp/option";
 import axios from "axios";
+import { BASE_URL } from "../../services/helper";
 
 function RequestBlood() {
 
@@ -73,7 +74,7 @@ function RequestBlood() {
         var isEmpty = isAnyFieldEmpty();
 
         if (!isEmpty) {
-            axios.post('http://localhost:8080/a/bloodReq', user)
+            axios.post(BASE_URL+'a/bloodReq', user)
                 .then(response => {
                     console.log(response.data);
                 })
